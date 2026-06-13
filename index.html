@@ -3,66 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inégalités 360</title>
+<title>Atlas des Inégalités</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
-<h1>Inégalités 360</h1>
-<p>Comprendre comment les inégalités influencent nos sociétés</p>
+
+<header class="hero">
+    <div class="container">
+        <h1>Atlas des Inégalités</h1>
+
+        <p class="subtitle">
+            Comprendre comment les inégalités façonnent nos sociétés.
+        </p>
+
+        <p class="intro">
+            Santé, éducation, logement, criminalité, mobilité sociale,
+            confiance collective : explorez les données,
+            comprenez les mécanismes et découvrez les débats scientifiques.
+        </p>
+
+        <a href="#themes" class="btn">
+            Explorer les thématiques
+        </a>
+    </div>
 </header>
 
 <nav>
-<a href="#comprendre">Comprendre</a>
-<a href="#sante">Santé</a>
-<a href="#education">Éducation</a>
-<a href="#criminalite">Criminalité</a>
-<a href="#sources">Sources</a>
+    <a href="#mission">Mission</a>
+    <a href="#themes">Thématiques</a>
+    <a href="#simulateur">Simulateur</a>
+    <a href="#sante">Santé</a>
+    <a href="#sources">Sources</a>
 </nav>
 
-<section id="hero">
-<h2>Une société plus inégalitaire est-elle une société plus fragile ?</h2>
-<p>Découvrez les liens entre inégalités, santé, réussite scolaire, criminalité et cohésion sociale.</p>
+<section id="mission" class="container">
+
+    <h2>Notre mission</h2>
+
+    <p>
+        Atlas des Inégalités est un projet pédagogique visant à rendre
+        accessibles les connaissances scientifiques sur les liens entre
+        les inégalités sociales et le fonctionnement des sociétés.
+    </p>
+
+    <p>
+        Notre objectif n'est pas de dire aux visiteurs ce qu'ils doivent penser,
+        mais de leur fournir les données, les mécanismes et les outils nécessaires
+        pour comprendre les grands enjeux contemporains.
+    </p>
+
 </section>
 
-<section id="comprendre">
-<h2>Comprendre les inégalités</h2>
-<p>Les inégalités peuvent concerner les revenus, le patrimoine, l'éducation, la santé ou encore le logement.</p>
+<section id="themes" class="container">
+
+    <h2>Les grandes thématiques</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>❤️ Santé</h3>
+            <p>
+                Espérance de vie, maladies chroniques,
+                santé mentale et accès aux soins.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎓 Éducation</h3>
+            <p>
+                Réussite scolaire, orientation
+                et mobilité sociale.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🏘️ Logement</h3>
+            <p>
+                Conditions de vie,
+                ségrégation résidentielle et précarité.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚖️ Société</h3>
+            <p>
+                Criminalité,
+                cohésion sociale et confiance.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📈 Mobilité sociale</h3>
+            <p>
+                Peut-on réellement changer de condition sociale ?
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌍 Comparaisons internationales</h3>
+            <p>
+                Explorer les différences entre pays.
+            </p>
+        </div>
+
+    </div>
+
 </section>
 
-<section id="sante">
-<h2>Inégalités et santé</h2>
-<p>Les populations les plus défavorisées connaissent souvent une espérance de vie plus faible et davantage de maladies chroniques.</p>
+<section id="simulateur" class="container">
+
+    <h2>Simulateur pédagogique</h2>
+
+    <p>
+        Cette simulation illustre de manière simplifiée certaines tendances
+        observées dans la littérature scientifique.
+    </p>
+
+    <label>
+        Niveau d'inégalités :
+        <strong><span id="valeur">50</span></strong>
+    </label>
+
+    <input
+        type="range"
+        min="0"
+        max="100"
+        value="50"
+        id="slider"
+    >
+
+    <div class="simulation-box">
+
+        <p id="sante-result"></p>
+        <p id="education-result"></p>
+        <p id="confiance-result"></p>
+
+    </div>
+
 </section>
 
-<section id="education">
-<h2>Inégalités et éducation</h2>
-<p>L'origine sociale influence encore fortement la réussite scolaire dans de nombreux pays.</p>
+<section id="sante" class="container">
+
+    <h2>Premier dossier : Inégalités et santé</h2>
+
+    <p>
+        Pourquoi certaines populations vivent-elles plus longtemps
+        que d'autres ?
+    </p>
+
+    <p>
+        Les chercheurs étudient depuis plusieurs décennies les liens
+        entre les inégalités sociales, le stress chronique,
+        l'accès aux soins, les conditions de vie et l'état de santé.
+    </p>
+
+    <p>
+        Ce dossier présentera les données disponibles,
+        les mécanismes biologiques et sociaux proposés,
+        ainsi que les débats scientifiques existants.
+    </p>
+
 </section>
 
-<section id="criminalite">
-<h2>Inégalités et criminalité</h2>
-<p>Les chercheurs observent fréquemment une corrélation entre fortes inégalités et tensions sociales accrues.</p>
+<section id="sources" class="container">
+
+    <h2>Sources principales</h2>
+
+    <ul>
+        <li>OCDE</li>
+        <li>OMS</li>
+        <li>Banque mondiale</li>
+        <li>Our World in Data</li>
+        <li>INSEE</li>
+        <li>Eurostat</li>
+    </ul>
+
 </section>
 
-<section id="simulateur">
-<h2>Visualisation pédagogique</h2>
-<label>Niveau d'inégalités : <span id="valeur">50</span></label>
-<input type="range" min="0" max="100" value="50" id="slider">
-<p id="resultat"></p>
-</section>
+<footer>
 
-<section id="sources">
-<h2>Sources à développer</h2>
-<ul>
-<li>OCDE</li>
-<li>OMS</li>
-<li>Banque mondiale</li>
-<li>Our World in Data</li>
-<li>INSEE</li>
-</ul>
-</section>
+    <p>
+        Atlas des Inégalités — Explorer les données.
+        Comprendre les mécanismes. Éclairer le débat.
+    </p>
+
+</footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
