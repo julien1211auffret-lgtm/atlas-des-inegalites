@@ -54,25 +54,18 @@
     padding: 18px;
 }
 
+.article-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+}
+
 .article-figure figcaption {
     margin-top: 14px;
     color: #475569;
     font-size: 0.95rem;
     line-height: 1.6;
-}
-
-.svg-education {
-    width: 100%;
-    overflow-x: auto;
-    background: #f8fafc;
-    border-radius: 20px;
-}
-
-.svg-education svg {
-    width: 100%;
-    min-width: 720px;
-    height: auto;
-    display: block;
 }
 
 .key-figures {
@@ -143,78 +136,6 @@
     margin-top: 0;
 }
 
-.interactive-map {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    gap: 24px;
-    margin-top: 24px;
-}
-
-.factor-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.factor-node {
-    border: 1px solid #cbd5e1;
-    background: #f8fafc;
-    border-radius: 18px;
-    padding: 18px;
-    cursor: pointer;
-    text-align: left;
-    font-weight: 800;
-    color: #0f172a;
-    transition: 0.2s ease;
-}
-
-.factor-node:hover {
-    transform: translateY(-2px);
-    border-color: #2563eb;
-    background: #eff6ff;
-}
-
-.factor-node.active {
-    background: #1e3a8a;
-    color: white;
-    border-color: #1e3a8a;
-    box-shadow: 0 12px 30px rgba(30, 58, 138, 0.22);
-}
-
-.factor-detail {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    border-radius: 22px;
-    padding: 28px;
-}
-
-.factor-detail h4 {
-    margin-top: 0;
-    font-size: 1.35rem;
-    color: #1e3a8a;
-}
-
-.factor-detail p {
-    font-size: 1rem;
-    line-height: 1.75;
-}
-
-.factor-path {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
-}
-
-.factor-path span {
-    background: white;
-    border: 1px solid #bfdbfe;
-    border-radius: 999px;
-    padding: 8px 12px;
-    font-size: 0.9rem;
-    font-weight: 800;
-}
-
 .interactive-chart {
     margin-top: 30px;
 }
@@ -226,7 +147,8 @@
     margin: 18px 0 26px 0;
 }
 
-.chart-controls button {
+.chart-controls button,
+.journey-step {
     border: 1px solid #cbd5e1;
     background: white;
     color: #0f172a;
@@ -237,12 +159,14 @@
     transition: 0.2s ease;
 }
 
-.chart-controls button:hover {
+.chart-controls button:hover,
+.journey-step:hover {
     border-color: #2563eb;
     background: #eff6ff;
 }
 
-.chart-controls button.active {
+.chart-controls button.active,
+.journey-step.active {
     background: #1e3a8a;
     color: white;
     border-color: #1e3a8a;
@@ -280,7 +204,8 @@
     color: #1e3a8a;
 }
 
-.chart-caption {
+.chart-caption,
+.journey-caption {
     background: #f8fafc;
     border: 1px solid #e5e7eb;
     border-radius: 16px;
@@ -289,6 +214,59 @@
     color: #475569;
     font-size: 0.95rem;
     line-height: 1.65;
+}
+
+.journey-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.journey-detail {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 22px;
+    padding: 28px;
+}
+
+.journey-detail h3 {
+    margin-top: 0;
+}
+
+.journey-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 18px;
+}
+
+.journey-card {
+    background: #ffffff;
+    border: 1px solid #bfdbfe;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.journey-card h4 {
+    margin-top: 0;
+    color: #1e3a8a;
+}
+
+.journey-path {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.journey-path span {
+    background: white;
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 800;
 }
 
 .footnotes {
@@ -316,17 +294,13 @@ sup a {
 }
 
 @media (max-width: 760px) {
-    .interactive-map {
-        grid-template-columns: 1fr;
-    }
-
-    .factor-grid {
-        grid-template-columns: 1fr;
-    }
-
     .bar-row {
         grid-template-columns: 1fr;
         gap: 8px;
+    }
+
+    .journey-columns {
+        grid-template-columns: 1fr;
     }
 
     .article p {
@@ -377,7 +351,7 @@ sup a {
         <a href="#probleme">Comprendre le problème</a>
         <a href="#donnees">Ce que montrent les données</a>
         <a href="#graphique">Explorer les données</a>
-        <a href="#carte">Carte interactive des mécanismes</a>
+        <a href="#parcours">Parcours interactif</a>
         <a href="#mecanismes">Les grandes chaînes d’explication</a>
         <a href="#etude-cle">Étude et auteurs clés</a>
         <a href="#prudence">Ce que l’on peut affirmer avec prudence</a>
@@ -418,6 +392,15 @@ sup a {
             au travail scolaire ou à la confiance dans les institutions.
         </p>
 
+        <figure class="article-figure">
+            <img src="education-chemins-origine-sociale-reussite.png" alt="Infographie montrant un parcours entre origine sociale, ressources familiales, expérience scolaire, orientation et diplômes">
+            <figcaption>
+                Les inégalités scolaires se construisent rarement en une seule étape. Elles peuvent se former
+                dans la famille, se transformer dans l’expérience scolaire, se renforcer lors de l’orientation
+                et produire des effets durables sur les diplômes.
+            </figcaption>
+        </figure>
+
         <p>
             Comprendre les inégalités scolaires ne signifie donc pas nier la responsabilité individuelle,
             ni considérer que tout serait joué d’avance. Cela signifie regarder comment les conditions sociales
@@ -425,62 +408,6 @@ sup a {
             rencontrés. L’enjeu n’est pas de dire que les élèves sont déterminés par leur origine sociale. L’enjeu
             est de comprendre pourquoi certains parcours sont rendus plus probables que d’autres.
         </p>
-
-        <figure class="article-figure">
-            <div class="svg-education">
-                <svg viewBox="0 0 1000 420" role="img" aria-label="Schéma des chemins entre origine sociale et parcours scolaire">
-                    <rect x="40" y="80" width="190" height="150" rx="26" fill="#eff6ff" stroke="#bfdbfe"/>
-                    <circle cx="95" cy="130" r="28" fill="#1e3a8a"/>
-                    <text x="95" y="139" text-anchor="middle" font-size="28" font-weight="800" fill="#ffffff">1</text>
-                    <text x="135" y="122" font-size="20" font-weight="800" fill="#0f172a">Famille</text>
-                    <text x="135" y="152" font-size="14" fill="#475569">langage, livres,</text>
-                    <text x="135" y="173" font-size="14" fill="#475569">temps disponible</text>
-
-                    <rect x="290" y="80" width="190" height="150" rx="26" fill="#f8fafc" stroke="#cbd5e1"/>
-                    <circle cx="345" cy="130" r="28" fill="#2563eb"/>
-                    <text x="345" y="139" text-anchor="middle" font-size="28" font-weight="800" fill="#ffffff">2</text>
-                    <text x="385" y="122" font-size="20" font-weight="800" fill="#0f172a">École</text>
-                    <text x="385" y="152" font-size="14" fill="#475569">apprentissages,</text>
-                    <text x="385" y="173" font-size="14" fill="#475569">normes, évaluations</text>
-
-                    <rect x="540" y="80" width="190" height="150" rx="26" fill="#fff7ed" stroke="#fed7aa"/>
-                    <circle cx="595" cy="130" r="28" fill="#f97316"/>
-                    <text x="595" y="139" text-anchor="middle" font-size="28" font-weight="800" fill="#ffffff">3</text>
-                    <text x="635" y="122" font-size="20" font-weight="800" fill="#0f172a">Orientation</text>
-                    <text x="635" y="152" font-size="14" fill="#475569">choix, conseils,</text>
-                    <text x="635" y="173" font-size="14" fill="#475569">autocensure</text>
-
-                    <rect x="790" y="80" width="170" height="150" rx="26" fill="#ecfdf5" stroke="#bbf7d0"/>
-                    <circle cx="845" cy="130" r="28" fill="#166534"/>
-                    <text x="845" y="139" text-anchor="middle" font-size="28" font-weight="800" fill="#ffffff">4</text>
-                    <text x="885" y="122" font-size="20" font-weight="800" fill="#0f172a">Diplômes</text>
-                    <text x="885" y="152" font-size="14" fill="#475569">parcours,</text>
-                    <text x="885" y="173" font-size="14" fill="#475569">avenir social</text>
-
-                    <line x1="230" y1="155" x2="290" y2="155" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
-                    <line x1="480" y1="155" x2="540" y2="155" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
-                    <line x1="730" y1="155" x2="790" y2="155" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
-
-                    <path d="M875 240 C760 355, 260 355, 125 240" fill="none" stroke="#94a3b8" stroke-width="4" stroke-dasharray="10 10" marker-end="url(#arrow-gray)"/>
-                    <text x="500" y="330" text-anchor="middle" font-size="17" font-weight="700" fill="#475569">
-                        Les effets peuvent se cumuler au fil de la scolarité
-                    </text>
-
-                    <defs>
-                        <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
-                            <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
-                        </marker>
-                        <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
-                            <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/>
-                        </marker>
-                    </defs>
-                </svg>
-            </div>
-            <figcaption>
-                Les inégalités scolaires se construisent rarement en une seule étape. Elles résultent d’une accumulation :
-                conditions familiales, ressources disponibles, expérience scolaire, orientation, accès aux filières et diplômes.
-            </figcaption>
-        </figure>
 
     </section>
 
@@ -513,19 +440,19 @@ sup a {
                 <div class="key-number">113</div>
                 <div class="key-label">Points d’écart dans PISA</div>
                 <p class="key-note">
-                    En mathématiques, les élèves français les plus favorisés socialement dépassent
-                    les plus défavorisés de 113 points dans PISA 2022.
+                    Dans PISA 2022, l’écart entre les élèves les plus favorisés et les plus défavorisés
+                    reste très marqué en mathématiques.
                     <sup><a href="#source-2">2</a></sup>
                 </p>
             </div>
 
             <div class="key-figure">
-                <div class="key-number">21 %</div>
-                <div class="key-label">Variation des performances</div>
+                <div class="key-number">36 % / 67 %</div>
+                <div class="key-label">Diplôme du supérieur</div>
                 <p class="key-note">
-                    Dans PISA 2022, le statut socio-économique explique 21 % de la variation
-                    des performances en mathématiques en France, contre 15 % en moyenne OCDE.
-                    <sup><a href="#source-2">2</a></sup>
+                    Parmi les 25-29 ans, 36 % des enfants d’employés et d’ouvriers déclarent un diplôme
+                    du supérieur, contre 67 % des enfants de cadres, professions intermédiaires ou indépendants.
+                    <sup><a href="#source-4">4</a></sup>
                 </p>
             </div>
 
@@ -537,13 +464,6 @@ sup a {
             modifient fortement les probabilités de réussite scolaire. Certains élèves déjouent les statistiques,
             réussissent malgré des conditions défavorables ou échouent malgré un environnement favorisé.
             Mais l’existence d’exceptions ne supprime pas la force des tendances collectives.
-        </p>
-
-        <p>
-            À l’échelle internationale, la France apparaît souvent comme un pays où le lien entre origine sociale
-            et résultats scolaires est particulièrement fort. Selon les données PISA traitées par l’INSEE, l’écart
-            entre élèves de milieu favorisé et défavorisé en culture mathématique atteint 33 points en France en 2022,
-            au-dessus de la moyenne de l’Union européenne.<sup><a href="#source-3">3</a></sup>
         </p>
 
         <div class="method-note">
@@ -562,9 +482,9 @@ sup a {
         <h2>Explorer les données</h2>
 
         <p>
-            Le graphique ci-dessous permet d’explorer deux ensembles de données. Le premier montre les écarts
-            de compétences en français à l’entrée en sixième selon l’origine sociale. Le second montre les résultats
-            PISA 2022 en culture mathématique selon le statut économique, social et culturel des élèves.
+            Le graphique ci-dessous permet d’explorer plusieurs données : les écarts de compétences en français
+            à l’entrée en sixième, le poids des écarts sociaux dans PISA 2022, et l’accès au diplôme du supérieur
+            selon le milieu social.
         </p>
 
         <div class="visual-box interactive-chart">
@@ -573,8 +493,8 @@ sup a {
             <div class="chart-controls" aria-label="Choix du jeu de données">
                 <button class="dataset-btn active" data-dataset="bons-francais">Bons résultats en français</button>
                 <button class="dataset-btn" data-dataset="difficulte-francais">Difficultés en français</button>
-                <button class="dataset-btn" data-dataset="pisa-france">PISA France</button>
-                <button class="dataset-btn" data-dataset="pisa-europe">Écarts européens</button>
+                <button class="dataset-btn" data-dataset="pisa-ecart">PISA : écart social</button>
+                <button class="dataset-btn" data-dataset="superieur">Diplôme du supérieur</button>
             </div>
 
             <div id="chart-title" class="key-label">
@@ -592,48 +512,75 @@ sup a {
 
     </section>
 
-    <section id="carte">
+    <section id="parcours">
 
-        <h2>Carte interactive des mécanismes</h2>
+        <h2>Parcours interactif : comment les inégalités s’accumulent</h2>
 
         <p>
-            Les inégalités scolaires ne se réduisent pas à une seule cause. Elles passent par des mécanismes
-            multiples : le langage, les ressources matérielles, la disponibilité des adultes, la ségrégation
-            scolaire, l’orientation, l’accès à l’information, le rapport à l’école, la confiance en soi
-            ou encore les attentes institutionnelles.
+            La carte précédente était trop abstraite car elle séparait les facteurs les uns des autres.
+            Le module ci-dessous propose une lecture plus didactique : il suit un parcours scolaire.
+            À chaque étape, on peut voir ce qui peut soutenir l’élève, ce qui peut le freiner, et comment
+            un petit écart peut se transformer en écart durable.
         </p>
 
         <div class="visual-box">
-            <h3 class="visual-title">Clique sur un facteur pour comprendre comment il peut agir</h3>
+            <h3 class="visual-title">Clique sur une étape du parcours</h3>
 
-            <div class="interactive-map">
+            <div class="journey-controls">
+                <button class="journey-step active" data-step="depart">1. Départ social</button>
+                <button class="journey-step" data-step="ressources">2. Ressources</button>
+                <button class="journey-step" data-step="experience">3. Expérience scolaire</button>
+                <button class="journey-step" data-step="orientation">4. Orientation</button>
+                <button class="journey-step" data-step="diplome">5. Diplômes</button>
+            </div>
 
-                <div class="factor-grid">
-                    <button class="factor-node active" data-factor="capital">Capital culturel</button>
-                    <button class="factor-node" data-factor="revenus">Revenus familiaux</button>
-                    <button class="factor-node" data-factor="logement">Logement</button>
-                    <button class="factor-node" data-factor="numerique">Accès au numérique</button>
-                    <button class="factor-node" data-factor="segregation">Ségrégation scolaire</button>
-                    <button class="factor-node" data-factor="orientation">Orientation</button>
-                    <button class="factor-node" data-factor="confiance">Confiance scolaire</button>
-                    <button class="factor-node" data-factor="attentes">Attentes institutionnelles</button>
-                </div>
+            <div class="journey-detail">
+                <h3 id="journey-title">1. Départ social</h3>
 
-                <div class="factor-detail">
-                    <h4 id="factor-title">Capital culturel</h4>
-                    <p id="factor-text">
-                        Le capital culturel désigne la familiarité avec les codes scolaires : vocabulaire,
-                        rapport aux livres, habitudes de discussion, connaissance des attentes de l’école,
-                        aisance à argumenter ou à se projeter dans des études longues. Il ne remplace pas
-                        le travail de l’élève, mais il peut rendre certains apprentissages plus immédiatement accessibles.
-                    </p>
-                    <div id="factor-path" class="factor-path">
-                        <span>Famille</span><span>Langage</span><span>Codes scolaires</span><span>Réussite</span>
+                <p id="journey-main">
+                    Les élèves n’arrivent pas à l’école avec les mêmes ressources sociales, culturelles et matérielles.
+                    Certains ont déjà une forte familiarité avec les livres, le vocabulaire scolaire, les sorties culturelles
+                    ou les attentes de l’école. D’autres doivent apprendre les contenus scolaires en même temps que les codes
+                    implicites qui les accompagnent.
+                </p>
+
+                <div class="journey-columns">
+                    <div class="journey-card">
+                        <h4>Ce qui peut aider</h4>
+                        <p id="journey-help">
+                            Avoir accès à des livres, entendre un vocabulaire varié, être accompagné dans les devoirs,
+                            connaître les attentes scolaires, pouvoir parler facilement avec les enseignants.
+                        </p>
+                    </div>
+
+                    <div class="journey-card">
+                        <h4>Ce qui peut freiner</h4>
+                        <p id="journey-risk">
+                            Un rapport plus distant à l’école, moins de ressources disponibles, moins d’information,
+                            moins de temps parental disponible ou une moindre familiarité avec les codes scolaires.
+                        </p>
                     </div>
                 </div>
 
+                <div id="journey-path" class="journey-path">
+                    <span>Famille</span><span>Langage</span><span>Codes scolaires</span><span>Confiance</span>
+                </div>
+            </div>
+
+            <div class="journey-caption">
+                Ce module ne décrit pas un destin individuel. Il montre comment des conditions sociales peuvent modifier
+                les probabilités de réussite ou de difficulté à l’échelle d’un groupe d’élèves.
             </div>
         </div>
+
+        <figure class="article-figure">
+            <img src="education-effet-cumulatif.png" alt="Infographie montrant l’effet cumulatif des inégalités scolaires au fil du temps">
+            <figcaption>
+                Les inégalités scolaires ne se produisent pas toujours brutalement. Elles peuvent s’accumuler :
+                un petit écart initial peut fragiliser la confiance, produire des difficultés répétées, influencer
+                l’orientation puis conduire à des diplômes différents.
+            </figcaption>
+        </figure>
 
     </section>
 
@@ -641,7 +588,7 @@ sup a {
 
         <h2>Les grandes chaînes d’explication</h2>
 
-        <h3>Le capital culturel et le langage scolaire</h3>
+        <h3>Le capital culturel et les ressources invisibles</h3>
 
         <p>
             L’école repose fortement sur le langage : comprendre une consigne, formuler une réponse, justifier
@@ -651,6 +598,15 @@ sup a {
             scolaires sont très présents. D’autres doivent apprendre simultanément les contenus scolaires et les codes
             implicites qui permettent de comprendre ce que l’école attend.
         </p>
+
+        <figure class="article-figure">
+            <img src="education-capital-culturel.png" alt="Infographie montrant des ressources éducatives invisibles et inégalement distribuées à l'entrée de l'école">
+            <figcaption>
+                Le capital culturel peut être vu comme un ensemble de ressources invisibles : familiarité avec les livres,
+                vocabulaire, codes scolaires, aide aux devoirs, connaissance des parcours et sentiment de légitimité.
+                Ces ressources ne sont pas du talent naturel : elles sont socialement construites.
+            </figcaption>
+        </figure>
 
         <p>
             Ce mécanisme ne signifie pas que certaines familles seraient “défaillantes”. Il signifie que l’école
@@ -669,13 +625,6 @@ sup a {
             ou à participer à des activités extrascolaires.
         </p>
 
-        <p>
-            Ces différences ne produisent pas toujours des effets visibles immédiatement. Elles agissent souvent par
-            accumulation. Une difficulté légère mais répétée dans les devoirs, un manque d’espace pour travailler,
-            une fatigue chronique, une absence d’aide dans les démarches d’orientation ou une autocensure peuvent,
-            avec le temps, produire des écarts importants.
-        </p>
-
         <h3>La ségrégation scolaire</h3>
 
         <p>
@@ -684,6 +633,15 @@ sup a {
             davantage de difficultés sociales. L’indice de position sociale, calculé par la DEPP, permet de résumer les
             conditions socio-économiques et culturelles moyennes des familles des élèves d’un établissement.<sup><a href="#source-5">5</a></sup>
         </p>
+
+        <figure class="article-figure">
+            <img src="education-segregation-scolaire.png" alt="Infographie montrant que les établissements scolaires ne concentrent pas les mêmes publics, ressources, options et réputations">
+            <figcaption>
+                La ségrégation scolaire ne renvoie pas seulement à des élèves différents. Elle peut aussi produire
+                des environnements scolaires différents : options disponibles, réputation, stratégies familiales,
+                stabilité des équipes, ressources pédagogiques et sentiment de possibilité.
+            </figcaption>
+        </figure>
 
         <p>
             Cette concentration peut avoir des effets importants. Elle peut modifier les conditions d’enseignement,
@@ -702,6 +660,15 @@ sup a {
             les stratégies de candidature et les conséquences de chaque choix.
         </p>
 
+        <figure class="article-figure">
+            <img src="education-orientation-autocensure.png" alt="Infographie représentant l'orientation comme un entonnoir où des élèves aux résultats proches prennent des chemins différents">
+            <figcaption>
+                L’orientation n’est pas seulement une question de notes. Elle dépend aussi de l’information disponible,
+                de la confiance en soi, du coût perçu des études, de la mobilité possible, des conseils reçus et du
+                sentiment de légitimité dans certaines filières.
+            </figcaption>
+        </figure>
+
         <p>
             L’autocensure joue ici un rôle important. Certains élèves renoncent à des filières sélectives non parce qu’ils
             n’en auraient pas les capacités, mais parce qu’ils ne s’y imaginent pas, parce qu’ils n’ont pas de modèle proche,
@@ -716,7 +683,7 @@ sup a {
             dans la mobilité géographique et dans l’accès aux réseaux professionnels. Le ministère de l’Enseignement supérieur
             indique qu’en moyenne sur 2021, 2022 et 2023, 36 % des enfants d’employés et d’ouvriers âgés de 25 à 29 ans
             déclarent détenir un diplôme d’enseignement supérieur, contre 67 % des enfants de cadres, de professions
-            intermédiaires ou d’indépendants.<sup><a href="#source-6">6</a></sup>
+            intermédiaires ou d’indépendants.<sup><a href="#source-4">4</a></sup>
         </p>
 
     </section>
@@ -727,6 +694,7 @@ sup a {
 
         <div class="callout-study">
             <h3>Repère scientifique — Bourdieu, Passeron et la reproduction sociale</h3>
+
             <p>
                 Pierre Bourdieu et Jean-Claude Passeron ont fortement marqué l’analyse des inégalités scolaires.
                 Leur travail a contribué à montrer que l’école ne transmet pas seulement des savoirs neutres :
@@ -746,8 +714,8 @@ sup a {
                 ni que l’école ne pourrait rien changer. Elle montre plutôt que l’école ne peut réduire les inégalités
                 que si elle prend au sérieux les écarts de ressources, de codes et de conditions d’apprentissage.
                 Les travaux plus récents du CNESCO insistent aussi sur la diversité des formes d’inégalités scolaires :
-                résultats, orientation, diplômes, ressources réelles disponibles dans les établissements et rendement
-                des diplômes sur le marché du travail.<sup><a href="#source-4">4</a></sup>
+                résultats, orientation, diplômes, ressources disponibles dans les établissements et rendement des diplômes
+                sur le marché du travail.<sup><a href="#source-6">6</a></sup>
             </p>
         </div>
 
@@ -791,12 +759,6 @@ sup a {
             d’élèves progressent parce qu’ils travaillent, parce qu’ils sont accompagnés, parce qu’ils rencontrent des
             adultes qui croient en eux. Mais cette phrase devient injuste si elle oublie que tous les élèves ne disposent
             pas des mêmes conditions pour vouloir, travailler et se projeter.
-        </p>
-
-        <p>
-            Vouloir ne se construit pas dans le vide. La confiance en soi, l’idée que certaines études sont possibles,
-            la connaissance des parcours, la stabilité matérielle ou le soutien familial influencent la capacité à maintenir
-            un effort dans la durée.
         </p>
 
         <h3>“L’école est neutre socialement”</h3>
@@ -886,19 +848,18 @@ sup a {
         </li>
 
         <li id="source-2">
-            OCDE, Education GPS, France, Student performance, PISA 2022.
-            <a href="https://gpseducation.oecd.org/CountryProfile?primaryCountry=FRA&topic=PI&treshold=10" target="_blank">Consulter la source</a>.
+            OCDE, <em>Résultats du PISA 2022</em>, volume I, chapitre sur l’équité dans l’éducation.
+            <a href="https://www.oecd.org/fr/publications/resultats-du-pisa-2022-volume-i_165f1d07-fr/full-report/equity-in-education-in-pisa-2022_4008c06e.html" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-3">
-            INSEE, “Inégalités sociales dans l’enseignement scolaire”, données PISA 2022,
-            traitement MEN-DEPP.
-            <a href="https://www.insee.fr/fr/statistiques/8242339" target="_blank">Consulter la source</a>.
+            INSEE, “Inégalités sociales dans l’enseignement scolaire”, données PISA et indicateurs récents.
+            <a href="https://www.insee.fr/fr/statistiques/8612522" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-4">
-            CNESCO, “Inégalités sociales et migratoires à l’école”, dossier thématique.
-            <a href="https://www.cnesco.fr/fr/conference/inegalites-sociales/" target="_blank">Consulter la source</a>.
+            Ministère de l’Enseignement supérieur et de la Recherche, “Le niveau d’études selon le milieu social”.
+            <a href="https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T448/le_niveau_d_etudes_selon_le_milieu_social/" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-5">
@@ -907,14 +868,13 @@ sup a {
         </li>
 
         <li id="source-6">
-            Ministère de l’Enseignement supérieur et de la Recherche, “Le niveau d’études selon le milieu social”,
-            État de l’Enseignement supérieur, de la Recherche et de l’Innovation.
-            <a href="https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T448/le_niveau_d_etudes_selon_le_milieu_social/" target="_blank">Consulter la source</a>.
+            CNESCO, “Inégalités sociales et migratoires à l’école”, dossier thématique.
+            <a href="https://www.cnesco.fr/fr/conference/inegalites-sociales/" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-7">
-            OCDE, <em>Résultats du PISA 2022</em>, volume I, chapitre sur l’équité dans l’éducation.
-            <a href="https://www.oecd.org/fr/publications/resultats-du-pisa-2022-volume-i_165f1d07-fr/full-report/equity-in-education-in-pisa-2022_4008c06e.html" target="_blank">Consulter la source</a>.
+            France Stratégie, <em>La force du destin. Poids des héritages et parcours scolaires</em>, 2023.
+            <a href="https://www.strategie-plan.gouv.fr/files/files/Publications/Rapport/fs-2023-na125-force-du-destin-septembre_1.pdf" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-8">
@@ -923,22 +883,7 @@ sup a {
         </li>
 
         <li id="source-9">
-            France Stratégie, “Inégalité des chances : ce qui compte le plus”.
-            <a href="https://www.strategie-plan.gouv.fr/publications/inegalite-chances-compte-plus" target="_blank">Consulter la source</a>.
-        </li>
-
-        <li id="source-10">
-            France Stratégie, <em>La force du destin. Poids des héritages et parcours scolaires</em>, 2023.
-            <a href="https://www.strategie-plan.gouv.fr/files/files/Publications/Rapport/fs-2023-na125-force-du-destin-septembre_1.pdf" target="_blank">Consulter la source</a>.
-        </li>
-
-        <li id="source-11">
             Pierre Bourdieu et Jean-Claude Passeron, <em>La Reproduction. Éléments pour une théorie du système d’enseignement</em>, 1970.
-        </li>
-
-        <li id="source-12">
-            INSEE, “Inégalités sociales dans l’enseignement scolaire”, Insee Références, édition récente.
-            <a href="https://www.insee.fr/fr/statistiques/8612522" target="_blank">Consulter la source</a>.
         </li>
     </ol>
 
@@ -973,28 +918,22 @@ const chartData = {
             { label: "Enfants d’inactifs", value: 45 }
         ]
     },
-    "pisa-france": {
-        title: "PISA 2022 — score moyen en culture mathématique en France",
+    "pisa-ecart": {
+        title: "PISA 2022 — écart de performance lié au milieu social",
         unit: " pts",
-        caption: "Lecture : en France, les élèves de milieu social défavorisé obtiennent un score moyen de 457 en culture mathématique, contre 489 pour les élèves de milieu social favorisé. Source : OCDE, PISA 2022, traitement MEN-DEPP.",
+        caption: "Lecture : dans PISA 2022, les élèves favorisés obtiennent en moyenne des résultats nettement supérieurs aux élèves défavorisés en mathématiques. La moyenne OCDE est de 93 points d’écart ; les travaux de la DEPP signalent un écart français proche de 113 points entre les plus favorisés et les plus défavorisés.",
         rows: [
-            { label: "Milieu défavorisé", value: 457 },
-            { label: "Ensemble des élèves", value: 474 },
-            { label: "Milieu favorisé", value: 489 }
+            { label: "Moyenne OCDE", value: 93 },
+            { label: "France", value: 113 }
         ]
     },
-    "pisa-europe": {
-        title: "PISA 2022 — écart de score favorisés / défavorisés en mathématiques",
-        unit: " pts",
-        caption: "Lecture : en 2022, l’écart de score moyen en culture mathématique entre élèves favorisés et défavorisés atteint 33 points en France, contre 29 points en moyenne dans l’Union européenne. Source : INSEE, OCDE PISA 2022, traitement MEN-DEPP.",
+    "superieur": {
+        title: "Diplôme du supérieur chez les 25-29 ans selon le milieu social",
+        unit: "%",
+        caption: "Lecture : en moyenne sur 2021, 2022 et 2023, 36 % des enfants d’employés et d’ouvriers âgés de 25 à 29 ans déclarent détenir un diplôme d’enseignement supérieur, contre 67 % des enfants de cadres, professions intermédiaires ou indépendants. Source : Ministère de l’Enseignement supérieur.",
         rows: [
-            { label: "Italie", value: 18 },
-            { label: "Allemagne", value: 25 },
-            { label: "Espagne", value: 27 },
-            { label: "Union européenne", value: 29 },
-            { label: "France", value: 33 },
-            { label: "Belgique", value: 39 },
-            { label: "Pays-Bas", value: 45 }
+            { label: "Enfants d’employés et ouvriers", value: 36 },
+            { label: "Enfants de cadres, professions intermédiaires ou indépendants", value: 67 }
         ]
     }
 };
@@ -1036,61 +975,59 @@ document.querySelectorAll(".dataset-btn").forEach(button => {
     });
 });
 
-const factorData = {
-    capital: {
-        title: "Capital culturel",
-        text: "Le capital culturel désigne la familiarité avec les codes scolaires : vocabulaire, rapport aux livres, habitudes de discussion, connaissance des attentes de l’école, aisance à argumenter ou à se projeter dans des études longues. Il ne remplace pas le travail de l’élève, mais il peut rendre certains apprentissages plus immédiatement accessibles.",
-        path: ["Famille", "Langage", "Codes scolaires", "Réussite"]
+const journeyData = {
+    depart: {
+        title: "1. Départ social",
+        main: "Les élèves n’arrivent pas à l’école avec les mêmes ressources sociales, culturelles et matérielles. Certains ont déjà une forte familiarité avec les livres, le vocabulaire scolaire, les sorties culturelles ou les attentes de l’école. D’autres doivent apprendre les contenus scolaires en même temps que les codes implicites qui les accompagnent.",
+        help: "Avoir accès à des livres, entendre un vocabulaire varié, être accompagné dans les devoirs, connaître les attentes scolaires, pouvoir parler facilement avec les enseignants.",
+        risk: "Un rapport plus distant à l’école, moins de ressources disponibles, moins d’information, moins de temps parental disponible ou une moindre familiarité avec les codes scolaires.",
+        path: ["Famille", "Langage", "Codes scolaires", "Confiance"]
     },
-    revenus: {
-        title: "Revenus familiaux",
-        text: "Les revenus influencent l’accès aux ressources éducatives : livres, ordinateur, connexion, activités culturelles, soutien scolaire, transports, logement adapté au travail scolaire. Ils ne font pas tout, mais ils modifient les marges de manœuvre.",
-        path: ["Revenus", "Ressources", "Conditions d’apprentissage", "Parcours"]
+    ressources: {
+        title: "2. Ressources familiales",
+        main: "Les ressources familiales ne sont pas seulement financières. Elles peuvent être culturelles, relationnelles, temporelles ou informationnelles. Elles influencent la façon dont l’élève travaille, comprend les attentes scolaires et se projette.",
+        help: "Un espace calme, une connexion, des livres, un adulte disponible, des activités culturelles, des discussions sur l’école, une connaissance des filières.",
+        risk: "Un logement bruyant, peu d’espace, des horaires familiaux contraints, des démarches difficiles, un manque d’information sur les filières et les options.",
+        path: ["Ressources", "Travail scolaire", "Aide disponible", "Projection"]
     },
-    logement: {
-        title: "Logement",
-        text: "Un logement surpeuplé, bruyant ou instable peut rendre le travail scolaire plus difficile. Le sommeil, la concentration, l’intimité et la possibilité de faire ses devoirs dans de bonnes conditions sont aussi des facteurs éducatifs.",
-        path: ["Logement", "Sommeil", "Concentration", "Apprentissages"]
-    },
-    numerique: {
-        title: "Accès au numérique",
-        text: "Le numérique ne se limite pas à posséder un appareil. Il faut aussi une connexion stable, un espace de travail, des compétences d’usage, un accompagnement et une capacité à chercher des informations fiables.",
-        path: ["Équipement", "Usage", "Information", "Autonomie"]
-    },
-    segregation: {
-        title: "Ségrégation scolaire",
-        text: "Lorsque les difficultés sociales se concentrent dans certains établissements, les conditions d’enseignement, les options disponibles, l’image du collège ou du lycée et les stratégies des familles peuvent renforcer les écarts entre élèves.",
-        path: ["Territoire", "Établissement", "Composition sociale", "Résultats"]
+    experience: {
+        title: "3. Expérience scolaire",
+        main: "L’expérience scolaire transforme les ressources initiales en résultats, en confiance ou en découragement. Les notes, les encouragements, les sanctions, les comparaisons et les relations avec les adultes construisent progressivement le rapport à l’école.",
+        help: "Des réussites régulières, des enseignants soutenants, des explications explicites, un climat scolaire positif, le sentiment d’être capable.",
+        risk: "Des difficultés répétées, un sentiment de retard, des consignes implicites, une faible confiance en soi ou l’impression que l’école n’est pas faite pour soi.",
+        path: ["Résultats", "Regard des adultes", "Confiance", "Ambition"]
     },
     orientation: {
-        title: "Orientation",
-        text: "L’orientation dépend des résultats, mais aussi de l’information disponible, des conseils reçus, de la confiance en soi, du coût des études, de la mobilité possible et du sentiment de légitimité dans certaines filières.",
-        path: ["Résultats", "Information", "Choix", "Filières"]
+        title: "4. Orientation",
+        main: "L’orientation est un moment où les inégalités deviennent visibles. À résultats proches, les choix peuvent différer selon l’information disponible, le coût perçu des études, la mobilité possible, la confiance en soi et le sentiment de légitimité.",
+        help: "Connaître les filières, comprendre les attendus, avoir des modèles proches, être encouragé, pouvoir financer ou organiser la mobilité.",
+        risk: "Autocensure, peur de ne pas être à sa place, manque d’information, coût anticipé, éloignement géographique, choix par défaut.",
+        path: ["Information", "Confiance", "Choix", "Filières"]
     },
-    confiance: {
-        title: "Confiance scolaire",
-        text: "La confiance en soi scolaire se construit dans le temps. Elle dépend des résultats, du regard des adultes, du sentiment de comprendre les attentes, de l’expérience de réussite et de la possibilité de se projeter.",
-        path: ["Expérience scolaire", "Encouragement", "Confiance", "Ambition"]
-    },
-    attentes: {
-        title: "Attentes institutionnelles",
-        text: "L’école fonctionne avec des attentes parfois explicites, parfois implicites : savoir demander de l’aide, comprendre une consigne, organiser son travail, choisir une option, parler aux enseignants. Ces attentes ne sont pas toujours également familières aux familles.",
-        path: ["Normes scolaires", "Codes implicites", "Compréhension", "Réussite"]
+    diplome: {
+        title: "5. Diplômes",
+        main: "Les diplômes ne sont pas seulement des résultats scolaires. Ils ouvrent ou ferment des possibilités d’études, d’emploi, de revenus, de mobilité sociale et de reconnaissance. Les inégalités accumulées peuvent donc produire des effets de long terme.",
+        help: "Un diplôme reconnu, une filière choisie, un réseau, une poursuite d’études possible, une insertion facilitée.",
+        risk: "Orientation subie, sortie précoce, diplôme moins valorisé, moindre accès aux filières sélectives, difficultés d’insertion.",
+        path: ["Diplôme", "Études", "Emploi", "Position sociale"]
     }
 };
 
-function renderFactor(factor) {
-    const data = factorData[factor];
-    document.getElementById("factor-title").textContent = data.title;
-    document.getElementById("factor-text").textContent = data.text;
-    document.getElementById("factor-path").innerHTML = data.path.map(item => `<span>${item}</span>`).join("");
+function renderJourney(step) {
+    const data = journeyData[step];
+
+    document.getElementById("journey-title").textContent = data.title;
+    document.getElementById("journey-main").textContent = data.main;
+    document.getElementById("journey-help").textContent = data.help;
+    document.getElementById("journey-risk").textContent = data.risk;
+    document.getElementById("journey-path").innerHTML = data.path.map(item => `<span>${item}</span>`).join("");
 }
 
-document.querySelectorAll(".factor-node").forEach(button => {
+document.querySelectorAll(".journey-step").forEach(button => {
     button.addEventListener("click", () => {
-        document.querySelectorAll(".factor-node").forEach(btn => btn.classList.remove("active"));
+        document.querySelectorAll(".journey-step").forEach(btn => btn.classList.remove("active"));
         button.classList.add("active");
-        renderFactor(button.dataset.factor);
+        renderJourney(button.dataset.step);
     });
 });
 
