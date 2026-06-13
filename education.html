@@ -6,6 +6,334 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inégalités et éducation | Atlas des Inégalités</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+.article {
+    max-width: 920px;
+    margin: auto;
+    padding: 70px 22px;
+}
+
+.article p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+}
+
+.article h2 {
+    margin-top: 48px;
+}
+
+.article h3 {
+    margin-top: 34px;
+    color: #1e3a8a;
+}
+
+.toc {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-left: 7px solid #2563eb;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    margin-bottom: 42px;
+}
+
+.toc a {
+    display: block;
+    margin: 8px 0;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.article-figure {
+    margin: 48px 0;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    padding: 18px;
+}
+
+.article-figure figcaption {
+    margin-top: 14px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.svg-education {
+    width: 100%;
+    overflow-x: auto;
+    background: #f8fafc;
+    border-radius: 20px;
+}
+
+.svg-education svg {
+    width: 100%;
+    min-width: 720px;
+    height: auto;
+    display: block;
+}
+
+.key-figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin: 35px 0;
+}
+
+.key-figure {
+    background: white;
+    border-radius: 20px;
+    padding: 26px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+.key-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #1e3a8a;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.key-label {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.key-note {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.visual-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    padding: 30px;
+    margin: 45px 0;
+}
+
+.visual-title {
+    margin-top: 0;
+    color: #0f172a;
+}
+
+.method-note {
+    background: #fff7ed;
+    border-left: 7px solid #f97316;
+    border-radius: 18px;
+    padding: 26px;
+    margin: 40px 0;
+}
+
+.callout-study {
+    background: #eef2ff;
+    border-left: 7px solid #4f46e5;
+    border-radius: 18px;
+    padding: 26px;
+    margin: 40px 0;
+}
+
+.callout-study h3 {
+    margin-top: 0;
+}
+
+.interactive-map {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.factor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.factor-node {
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 18px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 800;
+    color: #0f172a;
+    transition: 0.2s ease;
+}
+
+.factor-node:hover {
+    transform: translateY(-2px);
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.factor-node.active {
+    background: #1e3a8a;
+    color: white;
+    border-color: #1e3a8a;
+    box-shadow: 0 12px 30px rgba(30, 58, 138, 0.22);
+}
+
+.factor-detail {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 22px;
+    padding: 28px;
+}
+
+.factor-detail h4 {
+    margin-top: 0;
+    font-size: 1.35rem;
+    color: #1e3a8a;
+}
+
+.factor-detail p {
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.factor-path {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.factor-path span {
+    background: white;
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.interactive-chart {
+    margin-top: 30px;
+}
+
+.chart-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0 26px 0;
+}
+
+.chart-controls button {
+    border: 1px solid #cbd5e1;
+    background: white;
+    color: #0f172a;
+    border-radius: 999px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+.chart-controls button:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.chart-controls button.active {
+    background: #1e3a8a;
+    color: white;
+    border-color: #1e3a8a;
+}
+
+.bar-row {
+    display: grid;
+    grid-template-columns: 230px 1fr 90px;
+    gap: 16px;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.bar-label {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.bar-track {
+    height: 30px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
+    border-radius: 999px;
+    transition: width 0.35s ease;
+}
+
+.bar-value {
+    font-weight: 900;
+    color: #1e3a8a;
+}
+
+.chart-caption {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 22px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.footnotes {
+    max-width: 920px;
+    margin: auto;
+    padding: 60px 22px;
+}
+
+.footnotes ol {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    padding: 30px 45px;
+}
+
+.footnotes li {
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+sup a {
+    text-decoration: none;
+    font-weight: 800;
+}
+
+@media (max-width: 760px) {
+    .interactive-map {
+        grid-template-columns: 1fr;
+    }
+
+    .factor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bar-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .article p {
+        font-size: 1rem;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -15,18 +343,16 @@
         <h1>Inégalités et éducation</h1>
 
         <p class="subtitle">
-            Pourquoi l'origine sociale influence-t-elle encore fortement la réussite scolaire ?
+            Pourquoi la réussite scolaire dépend-elle aussi des conditions sociales ?
         </p>
 
         <p class="intro">
-            Réussite scolaire, orientation, diplômes, capital culturel,
-            ségrégation scolaire : l’école peut réduire les inégalités,
-            mais elle peut aussi parfois les reproduire.
+            Origine sociale, capital culturel, logement, orientation, ségrégation scolaire,
+            accès aux ressources, confiance en soi : l’école peut réduire certaines inégalités,
+            mais elle peut aussi en hériter, les transformer et parfois les renforcer.
         </p>
 
-        <a href="index.html" class="btn">
-            Retour à l'accueil
-        </a>
+        <a href="index.html" class="btn">Retour à l'accueil</a>
     </div>
 </header>
 
@@ -44,165 +370,577 @@
     <a href="sources.html">Sources</a>
 </nav>
 
-<section class="container">
+<main class="article">
 
-    <h2>La question centrale</h2>
-
-    <p>
-        L’école est souvent présentée comme un moyen de progresser socialement.
-        Pourtant, dans de nombreux pays, l’origine sociale continue d’influencer
-        les résultats scolaires, l’orientation, l’accès aux études longues
-        et les diplômes obtenus.
-    </p>
-
-    <p>
-        La question n’est donc pas seulement :
-        <strong>“les élèves travaillent-ils assez ?”</strong>
-        mais plutôt :
-        <strong>“dans quelles conditions sociales, familiales et scolaires les élèves apprennent-ils ?”</strong>
-    </p>
-
-</section>
-
-<section class="container">
-
-    <h2>Ce que montrent les données</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🎓 Réussite scolaire</h3>
-            <p>
-                Les résultats scolaires varient souvent selon le niveau de revenu,
-                le diplôme des parents, les conditions de logement
-                et l’accès aux ressources éducatives.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🧭 Orientation</h3>
-            <p>
-                À résultats comparables, les choix d’orientation peuvent être influencés
-                par l’information disponible, les attentes familiales,
-                la confiance en soi et les conseils reçus.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🏫 Ségrégation scolaire</h3>
-            <p>
-                Les élèves ne fréquentent pas toujours les mêmes établissements
-                selon leur milieu social, leur quartier ou les stratégies résidentielles
-                des familles.
-            </p>
-        </div>
-
+    <div class="toc">
+        <h2>Dans cette page</h2>
+        <a href="#probleme">Comprendre le problème</a>
+        <a href="#donnees">Ce que montrent les données</a>
+        <a href="#graphique">Explorer les données</a>
+        <a href="#carte">Carte interactive des mécanismes</a>
+        <a href="#mecanismes">Les grandes chaînes d’explication</a>
+        <a href="#etude-cle">Étude et auteurs clés</a>
+        <a href="#prudence">Ce que l’on peut affirmer avec prudence</a>
+        <a href="#idees-recues">Trois idées reçues à dépasser</a>
+        <a href="#retenir">Ce qu’il faut retenir</a>
+        <a href="#debat">Questions pour ouvrir le débat</a>
+        <a href="#sources">Sources</a>
     </div>
 
-</section>
+    <section id="probleme">
 
-<section class="container">
+        <h2>Comprendre le problème</h2>
 
-    <h2>Les mécanismes possibles</h2>
-
-    <p>
-        Les inégalités éducatives ne viennent pas d’un seul facteur.
-        Elles résultent souvent de l’accumulation de plusieurs écarts dès l’enfance.
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>1. Le capital culturel</h3>
+        <div class="simulation-box">
             <p>
-                Le vocabulaire, les habitudes de lecture, la familiarité avec les codes scolaires
-                et la connaissance du système éducatif peuvent faciliter le parcours des élèves.
+                Les inégalités scolaires ne s’expliquent pas seulement par le travail personnel
+                ou par le talent individuel. Elles s’enracinent aussi dans des conditions sociales
+                très différentes : ressources familiales, langage, logement, accès aux livres,
+                confiance dans l’institution scolaire, orientation, ségrégation entre établissements
+                et capacité à se projeter dans les études.
             </p>
         </div>
 
-        <div class="card">
-            <h3>2. Les conditions matérielles</h3>
-            <p>
-                Le logement, le calme pour travailler, l’accès à un ordinateur,
-                aux livres, aux activités culturelles ou à l’aide aux devoirs
-                influencent les conditions d’apprentissage.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>3. Les attentes sociales</h3>
-            <p>
-                Les ambitions scolaires peuvent être encouragées ou limitées
-                par l’entourage, les représentations sociales
-                et la confiance dans la possibilité de réussir.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>4. Les ressources de l’établissement</h3>
-            <p>
-                La stabilité des équipes, les effectifs, l’accompagnement,
-                le climat scolaire et les moyens disponibles jouent aussi un rôle important.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="container">
-
-    <h2>Ce qu’il faut nuancer</h2>
-
-    <p>
-        L’origine sociale influence les trajectoires scolaires, mais elle ne détermine pas tout.
-        Des élèves réussissent malgré des conditions difficiles, et des politiques publiques
-        peuvent réduire certains écarts.
-    </p>
-
-    <ul>
-        <li>L’école peut reproduire des inégalités, mais elle peut aussi les réduire.</li>
-        <li>Les effets varient selon les pays, les territoires et les politiques éducatives.</li>
-        <li>Les trajectoires individuelles ne se résument jamais à l’origine sociale.</li>
-        <li>Les inégalités scolaires commencent souvent avant l’entrée à l’école.</li>
-    </ul>
-
-</section>
-
-<section class="container">
-
-    <h2>Ce qu’il faut retenir</h2>
-
-    <div class="simulation-box">
         <p>
-            <strong>1.</strong> L’origine sociale influence encore fortement les parcours éducatifs.
+            Quand on parle de réussite scolaire, on pense spontanément aux efforts de l’élève,
+            à sa motivation, à la qualité des enseignants ou au fonctionnement de l’école. Ces éléments
+            comptent évidemment. Un élève apprend, travaille, progresse, rencontre des adultes qui peuvent
+            l’aider ou le décourager. Mais ces éléments ne suffisent pas à expliquer pourquoi, dans une même
+            société, les trajectoires scolaires restent aussi liées au milieu social d’origine.
         </p>
 
         <p>
-            <strong>2.</strong> Les mécanismes sont multiples :
-            conditions matérielles, capital culturel, orientation, logement,
-            ségrégation scolaire et confiance en soi.
+            L’école est souvent présentée comme l’institution qui permet de corriger les inégalités de naissance.
+            C’est une partie de sa promesse républicaine : permettre à chacun de progresser par l’apprentissage,
+            l’effort et les diplômes. Mais l’école ne reçoit pas des élèves abstraits, identiques au départ.
+            Elle accueille des enfants qui ont déjà vécu des expériences sociales différentes, qui disposent
+            de ressources familiales différentes, qui n’ont pas le même rapport au langage, aux livres, au temps,
+            au travail scolaire ou à la confiance dans les institutions.
         </p>
 
         <p>
-            <strong>3.</strong> L’école peut être un outil de réduction des inégalités,
-            mais seulement si elle dispose des moyens nécessaires pour compenser les écarts de départ.
+            Comprendre les inégalités scolaires ne signifie donc pas nier la responsabilité individuelle,
+            ni considérer que tout serait joué d’avance. Cela signifie regarder comment les conditions sociales
+            modifient les probabilités de réussite, les marges de choix, les ressources disponibles et les obstacles
+            rencontrés. L’enjeu n’est pas de dire que les élèves sont déterminés par leur origine sociale. L’enjeu
+            est de comprendre pourquoi certains parcours sont rendus plus probables que d’autres.
         </p>
-    </div>
 
-</section>
+        <figure class="article-figure">
+            <div class="svg-education">
+                <svg viewBox="0 0 1000 420" role="img" aria-label="Schéma des chemins entre origine sociale et parcours scolaire">
+                    <rect x="40" y="80" width="190" height="150" rx="26" fill="#eff6ff" stroke="#bfdbfe"/>
+                    <circle cx="95" cy="130" r="28" fill="#1e3a8a"/>
+                    <text x="95" y="139" text-anchor="middle" font-size="28" font-weight="800" fill="#ffffff">1</text>
+                    <text x="135" y="122" font-size="20" font-weight="800" fill="#0f172a">Famille</text>
+                    <text x="135" y="152" font-size="14" fill="#475569">langage, livres,</text>
+                    <text x="135" y="173" font-size="14" fill="#475569">temps disponible</text>
 
-<section class="container">
+                    <rect x="290" y="80" width="190" height="150" rx="26" fill="#f8fafc" stroke="#cbd5e1"/>
+                    <circle cx="345" cy="130" r="28" fill="#2563eb"/>
+                    <text x="345" y="139" text-anchor="middle" font-size="28" font-weight="800" fill="#ffffff">2</text>
+                    <text x="385" y="122" font-size="20" font-weight="800" fill="#0f172a">École</text>
+                    <text x="385" y="152" font-size="14" fill="#475569">apprentissages,</text>
+                    <text x="385" y="173" font-size="14" fill="#475569">normes, évaluations</text>
 
-    <h2>Sources à approfondir</h2>
+                    <rect x="540" y="80" width="190" height="150" rx="26" fill="#fff7ed" stroke="#fed7aa"/>
+                    <circle cx="595" cy="130" r="28" fill="#f97316"/>
+                    <text x="595" y="139" text-anchor="middle" font-size="28" font-weight="800" fill="#ffffff">3</text>
+                    <text x="635" y="122" font-size="20" font-weight="800" fill="#0f172a">Orientation</text>
+                    <text x="635" y="152" font-size="14" fill="#475569">choix, conseils,</text>
+                    <text x="635" y="173" font-size="14" fill="#475569">autocensure</text>
 
-    <ul>
-        <li>OCDE — rapports PISA et mobilité sociale.</li>
-        <li>INSEE — trajectoires scolaires et origine sociale.</li>
-        <li>DEPP — données françaises sur l’éducation.</li>
-        <li>UNESCO — rapports mondiaux sur l’éducation.</li>
-        <li>Travaux de sociologie de l’éducation sur la reproduction sociale.</li>
-    </ul>
+                    <rect x="790" y="80" width="170" height="150" rx="26" fill="#ecfdf5" stroke="#bbf7d0"/>
+                    <circle cx="845" cy="130" r="28" fill="#166534"/>
+                    <text x="845" y="139" text-anchor="middle" font-size="28" font-weight="800" fill="#ffffff">4</text>
+                    <text x="885" y="122" font-size="20" font-weight="800" fill="#0f172a">Diplômes</text>
+                    <text x="885" y="152" font-size="14" fill="#475569">parcours,</text>
+                    <text x="885" y="173" font-size="14" fill="#475569">avenir social</text>
+
+                    <line x1="230" y1="155" x2="290" y2="155" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+                    <line x1="480" y1="155" x2="540" y2="155" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+                    <line x1="730" y1="155" x2="790" y2="155" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+
+                    <path d="M875 240 C760 355, 260 355, 125 240" fill="none" stroke="#94a3b8" stroke-width="4" stroke-dasharray="10 10" marker-end="url(#arrow-gray)"/>
+                    <text x="500" y="330" text-anchor="middle" font-size="17" font-weight="700" fill="#475569">
+                        Les effets peuvent se cumuler au fil de la scolarité
+                    </text>
+
+                    <defs>
+                        <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+                        </marker>
+                        <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+            <figcaption>
+                Les inégalités scolaires se construisent rarement en une seule étape. Elles résultent d’une accumulation :
+                conditions familiales, ressources disponibles, expérience scolaire, orientation, accès aux filières et diplômes.
+            </figcaption>
+        </figure>
+
+    </section>
+
+    <section id="donnees">
+
+        <h2>Ce que montrent les données</h2>
+
+        <p>
+            Les données disponibles montrent que les écarts scolaires apparaissent tôt et qu’ils se maintiennent
+            souvent au fil de la scolarité. La DEPP observe par exemple qu’à l’entrée en sixième, les compétences
+            en français diffèrent fortement selon l’origine sociale. En 2022, 41 % des enfants ayant des parents
+            cadres ont de bons résultats en français, contre 10 % des enfants d’ouvriers et 6 % des enfants d’inactifs.
+            À l’inverse, 45 % des enfants d’inactifs et 26 % des enfants vivant dans un ménage ouvrier sont en difficulté,
+            contre 5 % des enfants de cadres supérieurs.<sup><a href="#source-1">1</a></sup>
+        </p>
+
+        <div class="key-figures">
+
+            <div class="key-figure">
+                <div class="key-number">41 %</div>
+                <div class="key-label">Bons résultats en français</div>
+                <p class="key-note">
+                    À l’entrée en sixième, 41 % des enfants de cadres ont de bons résultats en français,
+                    contre 10 % des enfants d’ouvriers et 6 % des enfants d’inactifs.
+                    <sup><a href="#source-1">1</a></sup>
+                </p>
+            </div>
+
+            <div class="key-figure">
+                <div class="key-number">113</div>
+                <div class="key-label">Points d’écart dans PISA</div>
+                <p class="key-note">
+                    En mathématiques, les élèves français les plus favorisés socialement dépassent
+                    les plus défavorisés de 113 points dans PISA 2022.
+                    <sup><a href="#source-2">2</a></sup>
+                </p>
+            </div>
+
+            <div class="key-figure">
+                <div class="key-number">21 %</div>
+                <div class="key-label">Variation des performances</div>
+                <p class="key-note">
+                    Dans PISA 2022, le statut socio-économique explique 21 % de la variation
+                    des performances en mathématiques en France, contre 15 % en moyenne OCDE.
+                    <sup><a href="#source-2">2</a></sup>
+                </p>
+            </div>
+
+        </div>
+
+        <p>
+            Ces données ne signifient pas que l’origine sociale détermine mécaniquement la trajectoire
+            de chaque élève. Elles indiquent plutôt qu’à l’échelle d’une population, les conditions sociales
+            modifient fortement les probabilités de réussite scolaire. Certains élèves déjouent les statistiques,
+            réussissent malgré des conditions défavorables ou échouent malgré un environnement favorisé.
+            Mais l’existence d’exceptions ne supprime pas la force des tendances collectives.
+        </p>
+
+        <p>
+            À l’échelle internationale, la France apparaît souvent comme un pays où le lien entre origine sociale
+            et résultats scolaires est particulièrement fort. Selon les données PISA traitées par l’INSEE, l’écart
+            entre élèves de milieu favorisé et défavorisé en culture mathématique atteint 33 points en France en 2022,
+            au-dessus de la moyenne de l’Union européenne.<sup><a href="#source-3">3</a></sup>
+        </p>
+
+        <div class="method-note">
+            <p>
+                <strong>Point de méthode.</strong> Les moyennes par groupe ne disent jamais ce qu’un élève particulier
+                va devenir. Elles permettent de mesurer des écarts collectifs. Une politique éducative juste doit donc
+                tenir ensemble deux idées : chaque élève peut progresser, mais tous les élèves ne partent pas avec
+                les mêmes ressources ni les mêmes obstacles.
+            </p>
+        </div>
+
+    </section>
+
+    <section id="graphique">
+
+        <h2>Explorer les données</h2>
+
+        <p>
+            Le graphique ci-dessous permet d’explorer deux ensembles de données. Le premier montre les écarts
+            de compétences en français à l’entrée en sixième selon l’origine sociale. Le second montre les résultats
+            PISA 2022 en culture mathématique selon le statut économique, social et culturel des élèves.
+        </p>
+
+        <div class="visual-box interactive-chart">
+            <h3 class="visual-title">Graphique interactif — Origine sociale et résultats scolaires</h3>
+
+            <div class="chart-controls" aria-label="Choix du jeu de données">
+                <button class="dataset-btn active" data-dataset="bons-francais">Bons résultats en français</button>
+                <button class="dataset-btn" data-dataset="difficulte-francais">Difficultés en français</button>
+                <button class="dataset-btn" data-dataset="pisa-france">PISA France</button>
+                <button class="dataset-btn" data-dataset="pisa-europe">Écarts européens</button>
+            </div>
+
+            <div id="chart-title" class="key-label">
+                Entrée en sixième — bons résultats en français
+            </div>
+
+            <div id="bar-chart"></div>
+
+            <div id="chart-caption" class="chart-caption">
+                Lecture : en 2022, à l’entrée en sixième, 41 % des enfants de cadres ont de bons résultats
+                en français, contre 10 % des enfants d’ouvriers et 6 % des enfants d’inactifs.
+                Source : DEPP.
+            </div>
+        </div>
+
+    </section>
+
+    <section id="carte">
+
+        <h2>Carte interactive des mécanismes</h2>
+
+        <p>
+            Les inégalités scolaires ne se réduisent pas à une seule cause. Elles passent par des mécanismes
+            multiples : le langage, les ressources matérielles, la disponibilité des adultes, la ségrégation
+            scolaire, l’orientation, l’accès à l’information, le rapport à l’école, la confiance en soi
+            ou encore les attentes institutionnelles.
+        </p>
+
+        <div class="visual-box">
+            <h3 class="visual-title">Clique sur un facteur pour comprendre comment il peut agir</h3>
+
+            <div class="interactive-map">
+
+                <div class="factor-grid">
+                    <button class="factor-node active" data-factor="capital">Capital culturel</button>
+                    <button class="factor-node" data-factor="revenus">Revenus familiaux</button>
+                    <button class="factor-node" data-factor="logement">Logement</button>
+                    <button class="factor-node" data-factor="numerique">Accès au numérique</button>
+                    <button class="factor-node" data-factor="segregation">Ségrégation scolaire</button>
+                    <button class="factor-node" data-factor="orientation">Orientation</button>
+                    <button class="factor-node" data-factor="confiance">Confiance scolaire</button>
+                    <button class="factor-node" data-factor="attentes">Attentes institutionnelles</button>
+                </div>
+
+                <div class="factor-detail">
+                    <h4 id="factor-title">Capital culturel</h4>
+                    <p id="factor-text">
+                        Le capital culturel désigne la familiarité avec les codes scolaires : vocabulaire,
+                        rapport aux livres, habitudes de discussion, connaissance des attentes de l’école,
+                        aisance à argumenter ou à se projeter dans des études longues. Il ne remplace pas
+                        le travail de l’élève, mais il peut rendre certains apprentissages plus immédiatement accessibles.
+                    </p>
+                    <div id="factor-path" class="factor-path">
+                        <span>Famille</span><span>Langage</span><span>Codes scolaires</span><span>Réussite</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="mecanismes">
+
+        <h2>Les grandes chaînes d’explication</h2>
+
+        <h3>Le capital culturel et le langage scolaire</h3>
+
+        <p>
+            L’école repose fortement sur le langage : comprendre une consigne, formuler une réponse, justifier
+            un raisonnement, lire un texte, expliquer une démarche, rédiger, argumenter. Or tous les élèves
+            n’arrivent pas à l’école avec la même familiarité avec ce langage scolaire. Certains enfants ont grandi
+            dans des environnements où les livres, les discussions abstraites, les sorties culturelles ou les codes
+            scolaires sont très présents. D’autres doivent apprendre simultanément les contenus scolaires et les codes
+            implicites qui permettent de comprendre ce que l’école attend.
+        </p>
+
+        <p>
+            Ce mécanisme ne signifie pas que certaines familles seraient “défaillantes”. Il signifie que l’école
+            valorise certaines formes de langage, de culture et de comportement qui sont inégalement distribuées
+            socialement. Lorsqu’un enfant maîtrise déjà une partie de ces codes, il peut sembler plus “naturellement”
+            à l’aise. Mais cette aisance est aussi le produit d’une socialisation.
+        </p>
+
+        <h3>Les conditions matérielles d’apprentissage</h3>
+
+        <p>
+            Les conditions matérielles pèsent aussi sur les apprentissages. Un élève ne travaille pas dans les mêmes
+            conditions selon qu’il dispose d’une chambre calme, d’un ordinateur, d’une connexion stable, de livres,
+            d’un bureau, d’un adulte disponible pour l’aider ou d’un temps de transport limité. Le logement, les revenus
+            et la stabilité familiale peuvent influencer le sommeil, la concentration, la capacité à faire les devoirs
+            ou à participer à des activités extrascolaires.
+        </p>
+
+        <p>
+            Ces différences ne produisent pas toujours des effets visibles immédiatement. Elles agissent souvent par
+            accumulation. Une difficulté légère mais répétée dans les devoirs, un manque d’espace pour travailler,
+            une fatigue chronique, une absence d’aide dans les démarches d’orientation ou une autocensure peuvent,
+            avec le temps, produire des écarts importants.
+        </p>
+
+        <h3>La ségrégation scolaire</h3>
+
+        <p>
+            Les inégalités scolaires ne se jouent pas seulement entre familles. Elles se jouent aussi entre établissements.
+            Certains collèges ou lycées concentrent davantage d’élèves socialement favorisés, tandis que d’autres concentrent
+            davantage de difficultés sociales. L’indice de position sociale, calculé par la DEPP, permet de résumer les
+            conditions socio-économiques et culturelles moyennes des familles des élèves d’un établissement.<sup><a href="#source-5">5</a></sup>
+        </p>
+
+        <p>
+            Cette concentration peut avoir des effets importants. Elle peut modifier les conditions d’enseignement,
+            les attentes des familles, l’offre d’options, les ressources disponibles, la stabilité des équipes,
+            l’image de l’établissement, la confiance des élèves ou les stratégies d’évitement scolaire. L’enjeu n’est donc
+            pas seulement de regarder les résultats individuels, mais aussi la composition sociale des établissements.
+        </p>
+
+        <h3>L’orientation et l’autocensure</h3>
+
+        <p>
+            L’orientation constitue un moment décisif de production des inégalités. Deux élèves ayant des résultats
+            proches ne formulent pas toujours les mêmes vœux, ne reçoivent pas les mêmes conseils, ne se sentent pas
+            également légitimes dans les mêmes filières et ne disposent pas toujours des mêmes informations. Les familles
+            les plus familières du système scolaire connaissent souvent mieux les filières, les établissements, les options,
+            les stratégies de candidature et les conséquences de chaque choix.
+        </p>
+
+        <p>
+            L’autocensure joue ici un rôle important. Certains élèves renoncent à des filières sélectives non parce qu’ils
+            n’en auraient pas les capacités, mais parce qu’ils ne s’y imaginent pas, parce qu’ils n’ont pas de modèle proche,
+            parce qu’ils craignent le coût, l’éloignement, l’échec ou le sentiment de ne pas être à leur place.
+        </p>
+
+        <h3>L’enseignement supérieur et la poursuite des écarts</h3>
+
+        <p>
+            Les inégalités ne disparaissent pas après le baccalauréat. Elles se prolongent dans l’enseignement supérieur,
+            dans le choix des filières, dans l’accès aux formations sélectives, dans la capacité à financer les études,
+            dans la mobilité géographique et dans l’accès aux réseaux professionnels. Le ministère de l’Enseignement supérieur
+            indique qu’en moyenne sur 2021, 2022 et 2023, 36 % des enfants d’employés et d’ouvriers âgés de 25 à 29 ans
+            déclarent détenir un diplôme d’enseignement supérieur, contre 67 % des enfants de cadres, de professions
+            intermédiaires ou d’indépendants.<sup><a href="#source-6">6</a></sup>
+        </p>
+
+    </section>
+
+    <section id="etude-cle">
+
+        <h2>Étude et auteurs clés</h2>
+
+        <div class="callout-study">
+            <h3>Repère scientifique — Bourdieu, Passeron et la reproduction sociale</h3>
+            <p>
+                Pierre Bourdieu et Jean-Claude Passeron ont fortement marqué l’analyse des inégalités scolaires.
+                Leur travail a contribué à montrer que l’école ne transmet pas seulement des savoirs neutres :
+                elle valorise aussi des manières de parler, d’écrire, de se comporter, de se projeter et de comprendre
+                les attentes scolaires qui sont inégalement distribuées selon les milieux sociaux.
+            </p>
+
+            <p>
+                L’intérêt de cette approche est de déplacer le regard. Elle ne dit pas que les élèves populaires
+                seraient moins capables. Elle montre que l’école peut transformer des différences sociales en différences
+                scolaires, puis en différences de diplôme. Ce mécanisme est puissant parce qu’il peut donner une apparence
+                de mérite individuel à des écarts qui sont aussi liés à des ressources sociales inégalement réparties.
+            </p>
+
+            <p>
+                Mais cette approche doit être utilisée avec prudence. Elle ne signifie pas que tout serait joué d’avance,
+                ni que l’école ne pourrait rien changer. Elle montre plutôt que l’école ne peut réduire les inégalités
+                que si elle prend au sérieux les écarts de ressources, de codes et de conditions d’apprentissage.
+                Les travaux plus récents du CNESCO insistent aussi sur la diversité des formes d’inégalités scolaires :
+                résultats, orientation, diplômes, ressources réelles disponibles dans les établissements et rendement
+                des diplômes sur le marché du travail.<sup><a href="#source-4">4</a></sup>
+            </p>
+        </div>
+
+    </section>
+
+    <section id="prudence">
+
+        <h2>Ce que l’on peut affirmer avec prudence</h2>
+
+        <p>
+            On peut affirmer que l’origine sociale reste fortement associée aux parcours scolaires. Les données de la DEPP,
+            de l’INSEE, de l’OCDE et du CNESCO convergent : les écarts de résultats, d’orientation et d’accès aux diplômes
+            ne sont pas distribués au hasard. Ils sont liés aux ressources sociales, économiques et culturelles dont disposent
+            les élèves et leurs familles.
+        </p>
+
+        <p>
+            On peut aussi affirmer que ces liens passent par plusieurs mécanismes. Le capital culturel, le logement,
+            les revenus, l’accès à l’information, la ségrégation scolaire, l’orientation et la confiance scolaire
+            interagissent. Aucun de ces facteurs n’explique tout à lui seul. Mais leur accumulation peut produire
+            des trajectoires très différentes.
+        </p>
+
+        <p>
+            En revanche, il faut éviter d’affirmer que l’origine sociale détermine entièrement le destin scolaire.
+            Des élèves réussissent dans des conditions difficiles, des enseignants transforment des trajectoires,
+            des établissements produisent de la valeur ajoutée, des politiques publiques peuvent réduire certains écarts.
+            L’enjeu est donc de comprendre les probabilités sociales sans enfermer les individus dans leur origine.
+        </p>
+
+    </section>
+
+    <section id="idees-recues">
+
+        <h2>Trois idées reçues à dépasser</h2>
+
+        <h3>“Quand on veut, on peut”</h3>
+
+        <p>
+            Cette phrase contient une part de vérité : la motivation, l’effort et la persévérance comptent. Beaucoup
+            d’élèves progressent parce qu’ils travaillent, parce qu’ils sont accompagnés, parce qu’ils rencontrent des
+            adultes qui croient en eux. Mais cette phrase devient injuste si elle oublie que tous les élèves ne disposent
+            pas des mêmes conditions pour vouloir, travailler et se projeter.
+        </p>
+
+        <p>
+            Vouloir ne se construit pas dans le vide. La confiance en soi, l’idée que certaines études sont possibles,
+            la connaissance des parcours, la stabilité matérielle ou le soutien familial influencent la capacité à maintenir
+            un effort dans la durée.
+        </p>
+
+        <h3>“L’école est neutre socialement”</h3>
+
+        <p>
+            L’école vise l’égalité et transmet des savoirs communs. Mais elle n’est pas socialement neutre dans ses effets.
+            Elle utilise des formes de langage, des attentes, des exercices, des codes et des modes d’évaluation qui peuvent
+            être plus familiers à certains élèves qu’à d’autres. Elle peut donc corriger des inégalités, mais aussi en hériter
+            et parfois les renforcer.
+        </p>
+
+        <h3>“Le mérite suffit à expliquer les parcours”</h3>
+
+        <p>
+            Le mérite existe, mais il n’explique pas tout. Deux élèves peuvent fournir des efforts comparables sans disposer
+            des mêmes ressources, des mêmes informations, du même environnement de travail ou des mêmes encouragements.
+            Une approche plus juste consiste à reconnaître l’effort individuel tout en regardant les conditions sociales
+            qui rendent cet effort plus ou moins efficace.
+        </p>
+
+    </section>
+
+    <section id="retenir">
+
+        <h2>Ce qu’il faut retenir</h2>
+
+        <div class="simulation-box">
+            <p>
+                Les inégalités scolaires ne signifient pas que les élèves seraient enfermés dans leur origine sociale.
+                Elles montrent qu’à l’échelle d’une population, les conditions sociales influencent les ressources,
+                les obstacles, les choix d’orientation, la confiance scolaire et les chances d’accéder à certains diplômes.
+            </p>
+
+            <p>
+                L’école peut réduire des inégalités, mais elle ne peut pas faire comme si tous les élèves arrivaient
+                avec les mêmes ressources. Une politique éducative réellement égalitaire ne consiste pas seulement
+                à traiter tout le monde de la même manière. Elle doit aussi identifier les écarts de conditions
+                et donner davantage de ressources à celles et ceux qui rencontrent le plus d’obstacles.
+            </p>
+
+            <p>
+                Comprendre les inégalités scolaires permet donc de dépasser l’opposition simpliste entre mérite individuel
+                et déterminisme social. Les élèves agissent, progressent et choisissent, mais ils le font dans des contextes
+                sociaux qui ne leur offrent pas les mêmes appuis.
+            </p>
+        </div>
+
+    </section>
+
+    <section id="debat">
+
+        <h2>Questions pour ouvrir le débat</h2>
+
+        <p>
+            L’école peut-elle réduire les inégalités sociales si les conditions de vie des élèves restent très différentes ?
+        </p>
+
+        <p>
+            Le mérite scolaire peut-il être pensé indépendamment des ressources familiales et du capital culturel ?
+        </p>
+
+        <p>
+            Une école plus juste doit-elle traiter tous les élèves de la même manière ou donner davantage à ceux qui rencontrent le plus d’obstacles ?
+        </p>
+
+        <p>
+            Comment aider les élèves sans enfermer les familles populaires dans une image déficitaire ?
+        </p>
+
+        <p>
+            À quel moment l’orientation devient-elle un mécanisme de reproduction sociale ?
+        </p>
+
+    </section>
+
+</main>
+
+<section id="sources" class="footnotes">
+
+    <h2>Sources et références</h2>
+
+    <ol>
+        <li id="source-1">
+            DEPP, “Évolution des inégalités sociales de compétences au fil du temps et de la scolarité”,
+            Note d’information n° 24.21, juin 2024.
+            <a href="https://www.education.gouv.fr/depp/evolution-des-inegalites-sociales-de-competences-au-fil-du-temps-et-de-la-scolarite-452484" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-2">
+            OCDE, Education GPS, France, Student performance, PISA 2022.
+            <a href="https://gpseducation.oecd.org/CountryProfile?primaryCountry=FRA&topic=PI&treshold=10" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-3">
+            INSEE, “Inégalités sociales dans l’enseignement scolaire”, données PISA 2022,
+            traitement MEN-DEPP.
+            <a href="https://www.insee.fr/fr/statistiques/8242339" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-4">
+            CNESCO, “Inégalités sociales et migratoires à l’école”, dossier thématique.
+            <a href="https://www.cnesco.fr/fr/conference/inegalites-sociales/" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-5">
+            DEPP, “L’indice de position sociale”, présentation de l’IPS.
+            <a href="https://www.education.gouv.fr/depp/l-indice-de-position-sociale-ips-357755" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-6">
+            Ministère de l’Enseignement supérieur et de la Recherche, “Le niveau d’études selon le milieu social”,
+            État de l’Enseignement supérieur, de la Recherche et de l’Innovation.
+            <a href="https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T448/le_niveau_d_etudes_selon_le_milieu_social/" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-7">
+            OCDE, <em>Résultats du PISA 2022</em>, volume I, chapitre sur l’équité dans l’éducation.
+            <a href="https://www.oecd.org/fr/publications/resultats-du-pisa-2022-volume-i_165f1d07-fr/full-report/equity-in-education-in-pisa-2022_4008c06e.html" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-8">
+            DEPP, <em>Repères et références statistiques 2024</em>.
+            <a href="https://rers.depp.education.fr/data/2024/RERS.pdf" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-9">
+            France Stratégie, “Inégalité des chances : ce qui compte le plus”.
+            <a href="https://www.strategie-plan.gouv.fr/publications/inegalite-chances-compte-plus" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-10">
+            France Stratégie, <em>La force du destin. Poids des héritages et parcours scolaires</em>, 2023.
+            <a href="https://www.strategie-plan.gouv.fr/files/files/Publications/Rapport/fs-2023-na125-force-du-destin-septembre_1.pdf" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-11">
+            Pierre Bourdieu et Jean-Claude Passeron, <em>La Reproduction. Éléments pour une théorie du système d’enseignement</em>, 1970.
+        </li>
+
+        <li id="source-12">
+            INSEE, “Inégalités sociales dans l’enseignement scolaire”, Insee Références, édition récente.
+            <a href="https://www.insee.fr/fr/statistiques/8612522" target="_blank">Consulter la source</a>.
+        </li>
+    </ol>
 
 </section>
 
@@ -212,6 +950,152 @@
         Comprendre les mécanismes. Éclairer le débat.
     </p>
 </footer>
+
+<script>
+const chartData = {
+    "bons-francais": {
+        title: "Entrée en sixième — bons résultats en français",
+        unit: "%",
+        caption: "Lecture : en 2022, à l’entrée en sixième, 41 % des enfants de cadres ont de bons résultats en français, contre 10 % des enfants d’ouvriers et 6 % des enfants d’inactifs. Source : DEPP.",
+        rows: [
+            { label: "Enfants de cadres", value: 41 },
+            { label: "Enfants d’ouvriers", value: 10 },
+            { label: "Enfants d’inactifs", value: 6 }
+        ]
+    },
+    "difficulte-francais": {
+        title: "Entrée en sixième — élèves en difficulté en français",
+        unit: "%",
+        caption: "Lecture : en 2022, à l’entrée en sixième, 45 % des enfants d’inactifs sont en difficulté en français, contre 26 % des enfants vivant dans un ménage ouvrier et 5 % des enfants de cadres supérieurs. Source : DEPP.",
+        rows: [
+            { label: "Enfants de cadres", value: 5 },
+            { label: "Enfants d’ouvriers", value: 26 },
+            { label: "Enfants d’inactifs", value: 45 }
+        ]
+    },
+    "pisa-france": {
+        title: "PISA 2022 — score moyen en culture mathématique en France",
+        unit: " pts",
+        caption: "Lecture : en France, les élèves de milieu social défavorisé obtiennent un score moyen de 457 en culture mathématique, contre 489 pour les élèves de milieu social favorisé. Source : OCDE, PISA 2022, traitement MEN-DEPP.",
+        rows: [
+            { label: "Milieu défavorisé", value: 457 },
+            { label: "Ensemble des élèves", value: 474 },
+            { label: "Milieu favorisé", value: 489 }
+        ]
+    },
+    "pisa-europe": {
+        title: "PISA 2022 — écart de score favorisés / défavorisés en mathématiques",
+        unit: " pts",
+        caption: "Lecture : en 2022, l’écart de score moyen en culture mathématique entre élèves favorisés et défavorisés atteint 33 points en France, contre 29 points en moyenne dans l’Union européenne. Source : INSEE, OCDE PISA 2022, traitement MEN-DEPP.",
+        rows: [
+            { label: "Italie", value: 18 },
+            { label: "Allemagne", value: 25 },
+            { label: "Espagne", value: 27 },
+            { label: "Union européenne", value: 29 },
+            { label: "France", value: 33 },
+            { label: "Belgique", value: 39 },
+            { label: "Pays-Bas", value: 45 }
+        ]
+    }
+};
+
+let currentDataset = "bons-francais";
+
+function renderChart() {
+    const chart = document.getElementById("bar-chart");
+    const title = document.getElementById("chart-title");
+    const caption = document.getElementById("chart-caption");
+
+    const dataset = chartData[currentDataset];
+    const rows = dataset.rows;
+    const max = Math.max(...rows.map(row => row.value));
+
+    title.textContent = dataset.title;
+    caption.textContent = dataset.caption;
+
+    chart.innerHTML = rows.map(row => {
+        const width = (row.value / max) * 100;
+        return `
+            <div class="bar-row">
+                <div class="bar-label">${row.label}</div>
+                <div class="bar-track">
+                    <div class="bar-fill" style="width:${width}%"></div>
+                </div>
+                <div class="bar-value">${row.value}${dataset.unit}</div>
+            </div>
+        `;
+    }).join("");
+}
+
+document.querySelectorAll(".dataset-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".dataset-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        currentDataset = button.dataset.dataset;
+        renderChart();
+    });
+});
+
+const factorData = {
+    capital: {
+        title: "Capital culturel",
+        text: "Le capital culturel désigne la familiarité avec les codes scolaires : vocabulaire, rapport aux livres, habitudes de discussion, connaissance des attentes de l’école, aisance à argumenter ou à se projeter dans des études longues. Il ne remplace pas le travail de l’élève, mais il peut rendre certains apprentissages plus immédiatement accessibles.",
+        path: ["Famille", "Langage", "Codes scolaires", "Réussite"]
+    },
+    revenus: {
+        title: "Revenus familiaux",
+        text: "Les revenus influencent l’accès aux ressources éducatives : livres, ordinateur, connexion, activités culturelles, soutien scolaire, transports, logement adapté au travail scolaire. Ils ne font pas tout, mais ils modifient les marges de manœuvre.",
+        path: ["Revenus", "Ressources", "Conditions d’apprentissage", "Parcours"]
+    },
+    logement: {
+        title: "Logement",
+        text: "Un logement surpeuplé, bruyant ou instable peut rendre le travail scolaire plus difficile. Le sommeil, la concentration, l’intimité et la possibilité de faire ses devoirs dans de bonnes conditions sont aussi des facteurs éducatifs.",
+        path: ["Logement", "Sommeil", "Concentration", "Apprentissages"]
+    },
+    numerique: {
+        title: "Accès au numérique",
+        text: "Le numérique ne se limite pas à posséder un appareil. Il faut aussi une connexion stable, un espace de travail, des compétences d’usage, un accompagnement et une capacité à chercher des informations fiables.",
+        path: ["Équipement", "Usage", "Information", "Autonomie"]
+    },
+    segregation: {
+        title: "Ségrégation scolaire",
+        text: "Lorsque les difficultés sociales se concentrent dans certains établissements, les conditions d’enseignement, les options disponibles, l’image du collège ou du lycée et les stratégies des familles peuvent renforcer les écarts entre élèves.",
+        path: ["Territoire", "Établissement", "Composition sociale", "Résultats"]
+    },
+    orientation: {
+        title: "Orientation",
+        text: "L’orientation dépend des résultats, mais aussi de l’information disponible, des conseils reçus, de la confiance en soi, du coût des études, de la mobilité possible et du sentiment de légitimité dans certaines filières.",
+        path: ["Résultats", "Information", "Choix", "Filières"]
+    },
+    confiance: {
+        title: "Confiance scolaire",
+        text: "La confiance en soi scolaire se construit dans le temps. Elle dépend des résultats, du regard des adultes, du sentiment de comprendre les attentes, de l’expérience de réussite et de la possibilité de se projeter.",
+        path: ["Expérience scolaire", "Encouragement", "Confiance", "Ambition"]
+    },
+    attentes: {
+        title: "Attentes institutionnelles",
+        text: "L’école fonctionne avec des attentes parfois explicites, parfois implicites : savoir demander de l’aide, comprendre une consigne, organiser son travail, choisir une option, parler aux enseignants. Ces attentes ne sont pas toujours également familières aux familles.",
+        path: ["Normes scolaires", "Codes implicites", "Compréhension", "Réussite"]
+    }
+};
+
+function renderFactor(factor) {
+    const data = factorData[factor];
+    document.getElementById("factor-title").textContent = data.title;
+    document.getElementById("factor-text").textContent = data.text;
+    document.getElementById("factor-path").innerHTML = data.path.map(item => `<span>${item}</span>`).join("");
+}
+
+document.querySelectorAll(".factor-node").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".factor-node").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        renderFactor(button.dataset.factor);
+    });
+});
+
+renderChart();
+</script>
 
 </body>
 </html>
