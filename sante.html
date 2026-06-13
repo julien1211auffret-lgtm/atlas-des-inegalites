@@ -9,7 +9,7 @@
 
 <style>
 .article {
-    max-width: 880px;
+    max-width: 920px;
     margin: auto;
     padding: 70px 22px;
 }
@@ -20,7 +20,7 @@
 }
 
 .article h2 {
-    margin-top: 40px;
+    margin-top: 48px;
 }
 
 .article h3 {
@@ -35,7 +35,7 @@
     border-radius: 18px;
     padding: 28px;
     box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
-    margin-bottom: 40px;
+    margin-bottom: 42px;
 }
 
 .toc a {
@@ -76,6 +76,7 @@
 .key-note {
     color: #475569;
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .visual-box {
@@ -92,85 +93,6 @@
     color: #0f172a;
 }
 
-.flow-grid {
-    display: grid;
-    gap: 14px;
-    margin-top: 24px;
-}
-
-.flow-row {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-    gap: 10px;
-    align-items: center;
-}
-
-.flow-item {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    color: #0f172a;
-    border-radius: 14px;
-    padding: 14px;
-    text-align: center;
-    font-weight: 800;
-}
-
-.arrow {
-    color: #1e3a8a;
-    font-weight: 900;
-    font-size: 1.3rem;
-}
-
-.bar-chart {
-    margin-top: 28px;
-}
-
-.bar-row {
-    display: grid;
-    grid-template-columns: 190px 1fr 80px;
-    gap: 16px;
-    align-items: center;
-    margin: 18px 0;
-}
-
-.bar-label {
-    font-weight: 800;
-}
-
-.bar-track {
-    background: #e5e7eb;
-    border-radius: 999px;
-    overflow: hidden;
-    height: 28px;
-}
-
-.bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #1e3a8a, #2563eb);
-    border-radius: 999px;
-}
-
-.bar-value {
-    font-weight: 900;
-    color: #1e3a8a;
-}
-
-.cycle {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 18px;
-    margin-top: 24px;
-}
-
-.cycle-item {
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
-    border-radius: 18px;
-    padding: 20px;
-    text-align: center;
-    font-weight: 800;
-}
-
 .method-note {
     background: #fff7ed;
     border-left: 7px solid #f97316;
@@ -179,8 +101,183 @@
     margin: 40px 0;
 }
 
+.interactive-map {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.factor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.factor-node {
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 18px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 800;
+    color: #0f172a;
+    transition: 0.2s ease;
+}
+
+.factor-node:hover {
+    transform: translateY(-2px);
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.factor-node.active {
+    background: #1e3a8a;
+    color: white;
+    border-color: #1e3a8a;
+    box-shadow: 0 12px 30px rgba(30, 58, 138, 0.22);
+}
+
+.factor-detail {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 22px;
+    padding: 28px;
+}
+
+.factor-detail h4 {
+    margin-top: 0;
+    font-size: 1.35rem;
+    color: #1e3a8a;
+}
+
+.factor-detail p {
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.factor-path {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.factor-path span {
+    background: white;
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.interactive-chart {
+    margin-top: 30px;
+}
+
+.chart-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0 26px 0;
+}
+
+.chart-controls button {
+    border: 1px solid #cbd5e1;
+    background: white;
+    color: #0f172a;
+    border-radius: 999px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+.chart-controls button:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.chart-controls button.active {
+    background: #1e3a8a;
+    color: white;
+    border-color: #1e3a8a;
+}
+
+.bar-row {
+    display: grid;
+    grid-template-columns: 210px 1fr 90px;
+    gap: 16px;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.bar-label {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.bar-track {
+    height: 30px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
+    border-radius: 999px;
+    transition: width 0.35s ease;
+}
+
+.bar-value {
+    font-weight: 900;
+    color: #1e3a8a;
+}
+
+.chart-caption {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 22px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.svg-illustration {
+    margin: 35px 0;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 24px;
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.svg-illustration svg {
+    width: 100%;
+    min-width: 640px;
+    height: auto;
+}
+
+.callout-study {
+    background: #eef2ff;
+    border-left: 7px solid #4f46e5;
+    border-radius: 18px;
+    padding: 26px;
+    margin: 40px 0;
+}
+
+.callout-study h3 {
+    margin-top: 0;
+}
+
 .footnotes {
-    max-width: 880px;
+    max-width: 920px;
     margin: auto;
     padding: 60px 22px;
 }
@@ -204,18 +301,21 @@ sup a {
 }
 
 @media (max-width: 760px) {
-    .flow-row {
+    .interactive-map {
         grid-template-columns: 1fr;
     }
 
-    .arrow {
-        transform: rotate(90deg);
-        text-align: center;
+    .factor-grid {
+        grid-template-columns: 1fr;
     }
 
     .bar-row {
         grid-template-columns: 1fr;
         gap: 8px;
+    }
+
+    .article p {
+        font-size: 1rem;
     }
 }
 </style>
@@ -261,13 +361,13 @@ sup a {
         <h2>Dans cette page</h2>
         <a href="#probleme">Comprendre le problème</a>
         <a href="#donnees">Ce que montrent les données</a>
+        <a href="#graphique">Explorer les données INSEE</a>
+        <a href="#carte">Carte interactive des mécanismes</a>
         <a href="#avant-hopital">La santé se construit avant l’hôpital</a>
         <a href="#mecanismes">Les grandes chaînes d’explication</a>
         <a href="#wilkinson">Wilkinson et Pickett</a>
         <a href="#prudence">Ce que l’on peut affirmer avec prudence</a>
         <a href="#idees-recues">Trois idées reçues à dépasser</a>
-        <a href="#retenir">Ce qu’il faut retenir</a>
-        <a href="#debat">Questions pour ouvrir le débat</a>
         <a href="#sources">Sources</a>
     </div>
 
@@ -277,49 +377,35 @@ sup a {
 
         <div class="simulation-box">
             <p>
-                Les inégalités sociales influencent la santé parce qu’elles modifient
-                les conditions de vie, l’exposition au stress, l’accès aux soins,
-                l’alimentation, le logement, le travail et les possibilités de prévention.
+                Les inégalités sociales influencent la santé parce qu’elles modifient les conditions
+                concrètes dans lesquelles les personnes vivent : logement, travail, revenus, stress,
+                accès aux soins, alimentation, environnement, relations sociales et possibilités de prévention.
             </p>
         </div>
 
         <p>
-            Quand on parle de santé, on pense spontanément aux médecins, aux hôpitaux,
-            aux médicaments ou aux comportements individuels. On pense au fait de manger
-            équilibré, de faire du sport, de dormir suffisamment, de ne pas fumer ou
-            de consulter un médecin lorsqu’un problème apparaît. Ces éléments comptent.
-            Ils font partie de la santé. Mais ils ne suffisent pas à expliquer pourquoi,
-            dans une même société, certains groupes vivent plus longtemps, tombent moins
-            souvent malades ou accèdent plus facilement aux soins que d’autres.
+            Quand on parle de santé, on pense spontanément aux médecins, aux hôpitaux, aux médicaments
+            ou aux comportements individuels. Ces éléments comptent évidemment. Mais ils ne suffisent
+            pas à expliquer pourquoi, dans une même société, certains groupes vivent plus longtemps,
+            tombent moins souvent malades ou accèdent plus facilement aux soins que d’autres.
         </p>
 
         <p>
-            La santé n’est pas seulement une affaire biologique ou médicale. Elle est
-            aussi profondément sociale. Deux personnes peuvent vivre dans le même pays,
-            bénéficier du même système de santé en théorie, et pourtant ne pas avoir
-            les mêmes chances de rester longtemps en bonne santé. Le revenu, le métier,
-            le niveau de diplôme, le logement, le territoire, l’environnement, la stabilité
-            de l’emploi, la qualité de l’alimentation, le niveau de stress ou la capacité
+            La santé n’est pas seulement une affaire biologique ou médicale. Elle est aussi profondément
+            sociale. Deux personnes peuvent vivre dans le même pays, bénéficier du même système de santé
+            en théorie, et pourtant ne pas avoir les mêmes chances de rester longtemps en bonne santé.
+            Le revenu, le métier, le niveau de diplôme, le logement, le territoire, l’environnement,
+            la stabilité de l’emploi, la qualité de l’alimentation, le niveau de stress ou la capacité
             à accéder à la prévention peuvent influencer durablement l’état de santé.
         </p>
 
         <p>
             L’Organisation mondiale de la santé utilise l’expression
-            <strong>“déterminants sociaux de la santé”</strong> pour désigner les conditions
-            dans lesquelles les personnes naissent, grandissent, vivent, travaillent
-            et vieillissent.<sup><a href="#source-1">1</a></sup> Cette formule est importante
-            parce qu’elle déplace le regard. Elle rappelle que la santé ne commence pas
-            seulement dans le cabinet du médecin ou à l’hôpital. Elle se construit dans
-            la vie quotidienne, dans les conditions matérielles, sociales et environnementales
-            qui rendent certaines vies plus protectrices que d’autres.
-        </p>
-
-        <p>
-            La question centrale est donc la suivante : pourquoi la position sociale
-            influence-t-elle autant les chances de vivre longtemps et en bonne santé ?
-            Il ne s’agit pas de dire que les inégalités expliquent tout. Il s’agit plutôt
-            de comprendre comment elles modifient les conditions de vie, l’exposition
-            aux risques et l’accès aux protections.
+            <strong>“déterminants sociaux de la santé”</strong> pour désigner les conditions dans lesquelles
+            les personnes naissent, grandissent, vivent, travaillent et vieillissent.<sup><a href="#source-1">1</a></sup>
+            Cette formule est importante parce qu’elle déplace le regard. Elle rappelle que la santé
+            ne commence pas seulement dans le cabinet du médecin ou à l’hôpital. Elle se construit
+            dans la vie quotidienne.
         </p>
 
     </section>
@@ -329,13 +415,10 @@ sup a {
         <h2>Ce que montrent les données</h2>
 
         <p>
-            Les données disponibles montrent que la santé suit souvent un
-            <strong>gradient social</strong>. Cela signifie que les écarts de santé ne se
-            limitent pas à une opposition simple entre les plus pauvres et les plus riches.
-            Très souvent, on observe une progression : plus la position sociale est
-            favorable, meilleurs sont en moyenne les indicateurs de santé. À l’inverse,
-            plus les conditions sociales sont fragiles, plus les risques de maladie,
-            de fatigue, de renoncement aux soins ou de mortalité précoce augmentent.
+            Les données disponibles montrent que la santé suit souvent un <strong>gradient social</strong>.
+            Cela signifie que les écarts de santé ne se limitent pas à une opposition simple entre les plus
+            pauvres et les plus riches. Très souvent, on observe une progression : plus la position sociale
+            est favorable, meilleurs sont en moyenne les indicateurs de santé.
         </p>
 
         <div class="key-figures">
@@ -345,100 +428,165 @@ sup a {
                 <div class="key-label">Écart d’espérance de vie</div>
                 <p class="key-note">
                     Écart à 35 ans entre hommes cadres et hommes ouvriers en France,
-                    selon les conditions de mortalité de 2020-2022.
-                    <sup><a href="#source-2">2</a></sup>
+                    selon les conditions de mortalité de 2020-2022.<sup><a href="#source-2">2</a></sup>
+                </p>
+            </div>
+
+            <div class="key-figure">
+                <div class="key-number">8,0 ans</div>
+                <div class="key-label">Écart selon le diplôme</div>
+                <p class="key-note">
+                    Écart à 35 ans entre les hommes diplômés du supérieur et les hommes sans diplôme,
+                    selon les données INSEE 2020-2022.<sup><a href="#source-2">2</a></sup>
                 </p>
             </div>
 
             <div class="key-figure">
                 <div class="key-number">×3</div>
-                <div class="key-label">Besoins médicaux non satisfaits</div>
+                <div class="key-label">Accès aux soins</div>
                 <p class="key-note">
-                    Dans les pays de l’OCDE, les personnes aux revenus les plus faibles
-                    déclarent beaucoup plus souvent des besoins médicaux non satisfaits.
-                    <sup><a href="#source-3">3</a></sup>
-                </p>
-            </div>
-
-            <div class="key-figure">
-                <div class="key-number">Gradient</div>
-                <div class="key-label">Un phénomène progressif</div>
-                <p class="key-note">
-                    Les écarts de santé ne concernent pas uniquement les plus pauvres :
-                    ils progressent souvent avec la position sociale.
+                    Dans les pays de l’OCDE, les personnes du quintile de revenu le plus faible
+                    déclarent beaucoup plus souvent des besoins médicaux non satisfaits.<sup><a href="#source-3">3</a></sup>
                 </p>
             </div>
 
         </div>
 
         <p>
-            En France, les données de l’INSEE permettent d’illustrer ce phénomène de
-            manière très concrète. Dans les conditions de mortalité observées en 2020-2022,
-            l’espérance de vie à 35 ans des hommes cadres est supérieure de plusieurs années
-            à celle des hommes ouvriers. L’INSEE indique un écart de
-            <strong>5,3 ans</strong> entre ces deux catégories.<sup><a href="#source-2">2</a></sup>
-            Ce chiffre ne signifie pas que chaque ouvrier vivra moins longtemps que chaque cadre,
-            ni que le métier explique à lui seul toute la différence. Il montre cependant
-            qu’à l’échelle d’une population, la position sociale reste associée à des écarts
-            importants d’espérance de vie.
-        </p>
-
-        <div class="visual-box">
-            <h3 class="visual-title">Graphique — Espérance de vie à 35 ans selon la catégorie sociale</h3>
-
-            <p>
-                Ce graphique simplifié illustre l’écart documenté par l’INSEE entre hommes cadres
-                et hommes ouvriers. Il ne résume pas toute la réalité des inégalités de santé,
-                mais il rend visible l’ampleur d’un écart social concret.
-            </p>
-
-            <div class="bar-chart">
-
-                <div class="bar-row">
-                    <div class="bar-label">Hommes cadres</div>
-                    <div class="bar-track">
-                        <div class="bar-fill" style="width: 100%;"></div>
-                    </div>
-                    <div class="bar-value">48,9 ans</div>
-                </div>
-
-                <div class="bar-row">
-                    <div class="bar-label">Hommes ouvriers</div>
-                    <div class="bar-track">
-                        <div class="bar-fill" style="width: 89%;"></div>
-                    </div>
-                    <div class="bar-value">43,6 ans</div>
-                </div>
-
-            </div>
-
-            <p class="key-note">
-                Lecture : à 35 ans, dans les conditions de mortalité de 2020-2022,
-                les hommes cadres peuvent espérer vivre en moyenne 48,9 années supplémentaires,
-                contre 43,6 années pour les hommes ouvriers.
-                Source : INSEE.
-            </p>
-        </div>
-
-        <p>
-            Ces écarts ne concernent pas seulement la durée de vie. Ils peuvent aussi
-            apparaître dans l’état de santé perçu, les maladies chroniques, la santé mentale,
-            les conditions de travail, l’exposition à la pollution, le renoncement aux soins
-            ou la capacité à bénéficier d’une prévention précoce. Les données de l’OCDE
-            montrent par exemple que les personnes appartenant au quintile de revenu le plus
-            faible déclarent plus souvent des besoins médicaux non satisfaits que les personnes
-            du quintile le plus élevé.<sup><a href="#source-3">3</a></sup> Autrement dit,
-            même lorsque des systèmes de santé existent, l’accès réel aux soins peut rester
-            socialement différencié.
+            Ces chiffres ne signifient pas que la position sociale détermine mécaniquement la santé
+            de chaque individu. Ils montrent plutôt qu’à l’échelle des populations, les groupes sociaux
+            ne sont pas exposés aux mêmes risques et ne disposent pas des mêmes protections.
         </p>
 
         <div class="method-note">
             <p>
-                <strong>Point de méthode.</strong> Ces observations ne doivent pas être interprétées
-                trop rapidement. Elles ne prouvent pas, à elles seules, une relation directe et unique
-                de cause à effet. Mais elles indiquent que les conditions sociales doivent être prises
-                au sérieux lorsqu’on analyse les différences de santé entre groupes sociaux.
+                <strong>Point de méthode.</strong> Une corrélation ne prouve pas à elle seule une causalité directe.
+                Mais lorsque plusieurs sources convergent — données institutionnelles, études longitudinales,
+                travaux de santé publique — elles rendent nécessaire l’analyse des conditions sociales de santé.
             </p>
+        </div>
+
+    </section>
+
+    <section id="graphique">
+
+        <h2>Explorer les données INSEE</h2>
+
+        <p>
+            Le graphique ci-dessous permet d’explorer les données de l’INSEE sur l’espérance de vie
+            à 35 ans. Il ne s’agit pas d’un score individuel, mais d’une comparaison statistique entre
+            groupes sociaux. L’intérêt est de rendre visible le gradient social : les écarts apparaissent
+            selon la catégorie socioprofessionnelle, mais aussi selon le niveau de diplôme.
+        </p>
+
+        <div class="visual-box interactive-chart">
+            <h3 class="visual-title">Graphique interactif — Espérance de vie à 35 ans</h3>
+
+            <div class="chart-controls" aria-label="Choix du type de données">
+                <button class="dataset-btn active" data-dataset="csp">Catégorie sociale</button>
+                <button class="dataset-btn" data-dataset="diplome">Diplôme</button>
+            </div>
+
+            <div class="chart-controls" aria-label="Choix du sexe">
+                <button class="sex-btn active" data-sex="hommes">Hommes</button>
+                <button class="sex-btn" data-sex="femmes">Femmes</button>
+            </div>
+
+            <div id="chart-title" class="key-label">
+                Espérance de vie à 35 ans selon la catégorie sociale — Hommes
+            </div>
+
+            <div id="bar-chart"></div>
+
+            <div id="chart-caption" class="chart-caption">
+                Lecture : en 2020-2022, à 35 ans, les hommes cadres peuvent espérer vivre
+                48,9 années supplémentaires, contre 43,6 années pour les hommes ouvriers.
+                Source : INSEE, échantillon démographique permanent.
+            </div>
+        </div>
+
+    </section>
+
+    <section id="carte">
+
+        <h2>Carte interactive des déterminants sociaux</h2>
+
+        <p>
+            Les déterminants sociaux de la santé n’agissent pas séparément. Ils se combinent.
+            Un revenu faible peut peser sur le logement, le logement peut peser sur le sommeil,
+            le sommeil sur la fatigue, la fatigue sur le travail, et le travail sur les revenus.
+            Cette logique cumulative est essentielle pour comprendre les inégalités de santé.
+        </p>
+
+        <div class="visual-box">
+            <h3 class="visual-title">Clique sur un facteur pour comprendre comment il peut agir</h3>
+
+            <div class="interactive-map">
+
+                <div class="factor-grid">
+                    <button class="factor-node active" data-factor="revenus">Revenus</button>
+                    <button class="factor-node" data-factor="logement">Logement</button>
+                    <button class="factor-node" data-factor="travail">Travail</button>
+                    <button class="factor-node" data-factor="soins">Accès aux soins</button>
+                    <button class="factor-node" data-factor="stress">Stress chronique</button>
+                    <button class="factor-node" data-factor="education">Éducation</button>
+                    <button class="factor-node" data-factor="environnement">Environnement</button>
+                    <button class="factor-node" data-factor="relations">Relations sociales</button>
+                </div>
+
+                <div class="factor-detail">
+                    <h4 id="factor-title">Revenus</h4>
+                    <p id="factor-text">
+                        Les revenus influencent la qualité du logement, l’alimentation, la possibilité
+                        de se chauffer, de se reposer, de consulter, de se déplacer ou d’acheter certains
+                        biens nécessaires à la santé. Ils ne déterminent pas tout, mais ils modifient
+                        fortement les marges de choix dans la vie quotidienne.
+                    </p>
+                    <div id="factor-path" class="factor-path">
+                        <span>Revenus</span><span>Conditions de vie</span><span>Prévention</span><span>Santé</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="svg-illustration">
+            <svg viewBox="0 0 900 360" role="img" aria-label="Illustration des chemins entre inégalités sociales et santé">
+                <rect x="30" y="45" width="190" height="90" rx="20" fill="#eff6ff" stroke="#bfdbfe"/>
+                <text x="125" y="82" text-anchor="middle" font-size="18" font-weight="700" fill="#1e3a8a">Position sociale</text>
+                <text x="125" y="110" text-anchor="middle" font-size="14" fill="#334155">revenus, diplôme, métier</text>
+
+                <rect x="355" y="45" width="190" height="90" rx="20" fill="#f8fafc" stroke="#cbd5e1"/>
+                <text x="450" y="82" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Conditions de vie</text>
+                <text x="450" y="110" text-anchor="middle" font-size="14" fill="#334155">logement, travail, soins</text>
+
+                <rect x="680" y="45" width="190" height="90" rx="20" fill="#fff7ed" stroke="#fed7aa"/>
+                <text x="775" y="82" text-anchor="middle" font-size="18" font-weight="700" fill="#9a3412">Exposition aux risques</text>
+                <text x="775" y="110" text-anchor="middle" font-size="14" fill="#334155">stress, pollution, fatigue</text>
+
+                <rect x="355" y="230" width="190" height="90" rx="20" fill="#ecfdf5" stroke="#bbf7d0"/>
+                <text x="450" y="267" text-anchor="middle" font-size="18" font-weight="700" fill="#166534">Santé</text>
+                <text x="450" y="295" text-anchor="middle" font-size="14" fill="#334155">espérance de vie, maladies</text>
+
+                <line x1="220" y1="90" x2="355" y2="90" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+                <line x1="545" y1="90" x2="680" y2="90" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+                <line x1="775" y1="135" x2="495" y2="230" stroke="#f97316" stroke-width="4" marker-end="url(#arrow2)"/>
+                <line x1="405" y1="230" x2="125" y2="135" stroke="#64748b" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow3)"/>
+
+                <text x="250" y="210" font-size="14" fill="#475569">Les effets peuvent aussi se renforcer dans le temps</text>
+
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+                    </marker>
+                    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#f97316"/>
+                    </marker>
+                    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+                    </marker>
+                </defs>
+            </svg>
         </div>
 
     </section>
@@ -448,72 +596,27 @@ sup a {
         <h2>La santé se construit avant l’hôpital</h2>
 
         <p>
-            Une idée essentielle traverse les travaux de santé publique : une grande partie
-            de la santé se joue avant l’apparition de la maladie. L’hôpital soigne, répare,
-            accompagne, soulage et sauve des vies. Mais il intervient souvent lorsque les
-            problèmes sont déjà là. Les déterminants sociaux de la santé invitent au contraire
-            à regarder ce qui se passe en amont : le logement, l’alimentation, le travail,
-            l’éducation, l’environnement, les revenus, les transports, la sécurité matérielle
-            et les relations sociales.
+            Une idée essentielle traverse les travaux de santé publique : une grande partie de la santé
+            se joue avant l’apparition de la maladie. L’hôpital soigne, répare, accompagne, soulage
+            et sauve des vies. Mais il intervient souvent lorsque les problèmes sont déjà là.
+            Les déterminants sociaux de la santé invitent au contraire à regarder ce qui se passe
+            en amont : le logement, l’alimentation, le travail, l’éducation, l’environnement,
+            les revenus, les transports, la sécurité matérielle et les relations sociales.
         </p>
-
-        <div class="visual-box">
-            <h3 class="visual-title">Infographie — La santé se construit dans la vie quotidienne</h3>
-
-            <div class="flow-grid">
-
-                <div class="flow-row">
-                    <div class="flow-item">Revenus</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Logement</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Stress</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Santé</div>
-                </div>
-
-                <div class="flow-row">
-                    <div class="flow-item">Travail</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Pénibilité</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Fatigue</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Maladies</div>
-                </div>
-
-                <div class="flow-row">
-                    <div class="flow-item">Éducation</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Information</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Prévention</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Soins</div>
-                </div>
-
-            </div>
-        </div>
 
         <p>
             Une personne qui vit dans un logement humide, mal chauffé, bruyant ou surpeuplé
             n’est pas exposée aux mêmes risques qu’une personne vivant dans un logement stable,
-            sain et confortable. Une personne qui occupe un emploi pénible, instable ou peu
-            reconnu ne subit pas les mêmes contraintes qu’une personne bénéficiant d’un travail
-            sécurisé, autonome et mieux rémunéré. Une personne qui doit choisir entre payer une
-            facture, remplir son réfrigérateur ou consulter un spécialiste n’a pas la même
-            capacité à prévenir les problèmes de santé qu’une personne disposant de marges
-            financières importantes.
+            sain et confortable. Une personne qui occupe un emploi pénible, instable ou peu reconnu
+            ne subit pas les mêmes contraintes qu’une personne bénéficiant d’un travail sécurisé,
+            autonome et mieux rémunéré.
         </p>
 
         <p>
-            Cette idée est au cœur du rapport de la Commission de l’OMS sur les déterminants
-            sociaux de la santé, présidée par Michael Marmot. Le rapport défend l’idée que les
-            inégalités de santé ne sont pas seulement le résultat de différences individuelles,
-            mais qu’elles découlent aussi de conditions sociales inégalement réparties.
-            Autrement dit, améliorer la santé d’une population suppose d’agir sur les soins,
-            mais aussi sur les conditions sociales qui rendent certaines personnes plus vulnérables.
-            <sup><a href="#source-5">5</a></sup>
+            Cette idée est au cœur du rapport de la Commission de l’OMS sur les déterminants sociaux
+            de la santé, présidée par Michael Marmot. Le rapport défend l’idée que les inégalités
+            de santé ne sont pas seulement le résultat de différences individuelles, mais qu’elles
+            découlent aussi de conditions sociales inégalement réparties.<sup><a href="#source-7">7</a></sup>
         </p>
 
     </section>
@@ -526,21 +629,10 @@ sup a {
 
         <p>
             Le premier mécanisme reliant inégalités et santé est matériel. Les revenus influencent
-            directement ce qu’il est possible de faire au quotidien. Ils conditionnent le type de
-            logement auquel on peut accéder, la qualité de l’alimentation, la possibilité de se
-            chauffer correctement, de se reposer, de partir en vacances, d’acheter certains produits
-            de santé, de pratiquer une activité physique ou de vivre dans un environnement moins
-            exposé au bruit et à la pollution.
-        </p>
-
-        <p>
-            Les conditions matérielles ne produisent pas des effets spectaculaires en un seul jour.
-            Elles agissent souvent lentement, par accumulation. Un logement mal isolé peut entraîner
-            de la fatigue, des problèmes respiratoires ou un mauvais sommeil. Une alimentation
-            contrainte par le budget peut rendre plus difficile la prévention de certaines maladies.
-            Des transports longs et fatigants peuvent réduire le temps disponible pour le repos,
-            l’activité physique, la vie familiale ou les démarches de santé. Un environnement dégradé
-            peut augmenter l’exposition au stress, au bruit, aux polluants ou au sentiment d’insécurité.
+            directement ce qu’il est possible de faire au quotidien. Ils conditionnent le type de logement
+            auquel on peut accéder, la qualité de l’alimentation, la possibilité de se chauffer correctement,
+            de se reposer, de partir en vacances, d’acheter certains produits de santé, de pratiquer une
+            activité physique ou de vivre dans un environnement moins exposé au bruit et à la pollution.
         </p>
 
         <h3>L’accès réel aux soins</h3>
@@ -548,88 +640,58 @@ sup a {
         <p>
             Dans beaucoup de pays, l’accès aux soins est présenté comme un droit. Mais un droit formel
             ne garantit pas toujours un accès réel. Les obstacles peuvent être financiers, géographiques,
-            administratifs, culturels ou temporels. Le coût de certains soins, les dépassements
-            d’honoraires, les délais de rendez-vous, les déserts médicaux, la complexité des démarches,
-            la difficulté à comprendre l’information médicale ou la peur d’être mal reçu peuvent freiner
-            le recours aux soins.
+            administratifs, culturels ou temporels. Le coût de certains soins, les dépassements d’honoraires,
+            les délais de rendez-vous, les déserts médicaux, la complexité des démarches ou la peur d’être
+            mal reçu peuvent freiner le recours aux soins.
         </p>
 
         <p>
             L’OCDE montre que les besoins médicaux non satisfaits sont plus fréquents chez les personnes
-            à bas revenu. Cette donnée est importante parce qu’elle révèle une différence entre l’existence
-            d’un système de soins et la capacité concrète à l’utiliser. Les plus favorisés disposent souvent
-            de plus de ressources pour identifier rapidement un problème, obtenir un rendez-vous, demander
-            un second avis, accéder à un spécialiste, comprendre un diagnostic ou maintenir une continuité
-            de suivi.
+            à bas revenu.<sup><a href="#source-3">3</a></sup> En France, la DREES a également documenté
+            les ressorts sociaux du renoncement aux soins pour raisons financières.<sup><a href="#source-10">10</a></sup>
+            Ces données rappellent qu’un système de soins peut être présent sans être également accessible
+            à toutes et tous.
         </p>
 
         <h3>Le stress chronique</h3>
 
         <p>
-            Un autre mécanisme important est le stress chronique. Le stress n’est pas seulement une émotion
-            passagère. Lorsqu’il devient durable, lorsqu’il est lié à l’insécurité financière, à la peur du
-            déclassement, à des dettes, à un emploi instable, à des conflits au travail, à des discriminations
-            ou à l’impossibilité de se projeter, il peut peser sur la santé physique et mentale.
+            Le stress n’est pas seulement une émotion passagère. Lorsqu’il devient durable, lorsqu’il est lié
+            à l’insécurité financière, à la peur du déclassement, à des dettes, à un emploi instable,
+            à des conflits au travail, à des discriminations ou à l’impossibilité de se projeter, il peut
+            peser sur la santé physique et mentale.
         </p>
 
-        <p>
-            Les études Whitehall, associées notamment à Michael Marmot, sont souvent citées pour comprendre
-            le gradient social de santé. Ces recherches menées auprès de fonctionnaires britanniques ont
-            montré que la position hiérarchique était associée à des différences de mortalité et de morbidité.
-            Leur intérêt est important : même dans une population relativement stable, salariée et insérée,
-            on observait des écarts de santé selon le grade d’emploi. Cela suggère que la santé n’est pas
-            seulement influencée par la pauvreté extrême, mais aussi par le statut social, l’autonomie,
-            le contrôle sur son travail et la place occupée dans la hiérarchie sociale.
-            <sup><a href="#source-4">4</a></sup>
-        </p>
+        <div class="callout-study">
+            <h3>Étude clé — Whitehall</h3>
+            <p>
+                Les études Whitehall, menées auprès de fonctionnaires britanniques, sont devenues une référence
+                pour comprendre le gradient social de santé. Elles ont montré qu’il existait des différences
+                de mortalité et de morbidité selon le grade d’emploi, y compris dans une population salariée
+                relativement stable. Dans une publication de 1978, les hommes du grade le plus bas présentaient
+                une mortalité coronarienne 3,6 fois plus élevée que ceux du grade le plus élevé.<sup><a href="#source-4">4</a></sup>
+            </p>
+        </div>
 
         <h3>Le travail, entre protection et usure</h3>
 
         <p>
-            Le travail occupe une place particulière dans les inégalités de santé. Il peut être protecteur
-            lorsqu’il apporte un revenu, une stabilité, une reconnaissance, des relations sociales et un
-            sentiment d’utilité. Mais il peut aussi devenir un facteur d’usure lorsqu’il expose à la pénibilité,
-            au stress, aux horaires décalés, aux risques physiques ou à une faible autonomie.
-        </p>
-
-        <p>
-            Tous les métiers n’exposent pas aux mêmes contraintes. Certains emplois impliquent des gestes
-            répétitifs, des charges lourdes, des produits dangereux, du bruit, du travail de nuit, une pression
-            forte, des accidents, une faible latitude de décision ou une usure précoce. Ces différences contribuent
-            à expliquer pourquoi les catégories sociales ne connaissent pas les mêmes trajectoires de santé.
+            Le travail peut être protecteur lorsqu’il apporte un revenu, une stabilité, une reconnaissance,
+            des relations sociales et un sentiment d’utilité. Mais il peut aussi devenir un facteur d’usure
+            lorsqu’il expose à la pénibilité, au stress, aux horaires décalés, aux risques physiques ou à une
+            faible autonomie. La DARES a publié des travaux sur les disparités d’exposition aux facteurs
+            de pénibilité en milieu professionnel et leurs liens avec les inégalités sociales de santé.<sup><a href="#source-12">12</a></sup>
         </p>
 
         <h3>Les relations sociales et le capital social</h3>
 
         <p>
-            La santé dépend aussi des relations sociales. Avoir des proches, des voisins, des collègues, des
-            associations ou des réseaux d’entraide peut aider à surmonter des difficultés. À l’inverse, l’isolement,
-            la défiance, l’instabilité résidentielle ou la précarité peuvent fragiliser les personnes.
+            La santé dépend aussi des relations sociales. Avoir des proches, des voisins, des collègues,
+            des associations ou des réseaux d’entraide peut aider à surmonter des difficultés. À l’inverse,
+            l’isolement, la défiance, l’instabilité résidentielle ou la précarité peuvent fragiliser les personnes.
+            Le capital social ne remplace pas les revenus, les droits sociaux ou les services publics,
+            mais il peut faciliter l’accès à l’information, au soutien émotionnel et à l’aide pratique.
         </p>
-
-        <p>
-            Le capital social ne remplace pas les revenus, les droits sociaux ou les services publics. On ne peut
-            pas demander à la solidarité informelle de compenser toutes les inégalités matérielles. Mais les relations
-            sociales jouent un rôle réel. Elles peuvent faciliter l’accès à l’information, au soutien émotionnel,
-            à l’aide pratique, à la prévention ou à la confiance nécessaire pour demander de l’aide.
-        </p>
-
-        <div class="visual-box">
-            <h3 class="visual-title">Infographie — Le cercle des vulnérabilités</h3>
-
-            <p>
-                Les inégalités peuvent créer des boucles cumulatives. Une difficulté sociale peut fragiliser la santé,
-                et une santé dégradée peut à son tour fragiliser la situation sociale.
-            </p>
-
-            <div class="cycle">
-                <div class="cycle-item">Précarité</div>
-                <div class="cycle-item">Stress durable</div>
-                <div class="cycle-item">Santé fragilisée</div>
-                <div class="cycle-item">Difficultés professionnelles</div>
-                <div class="cycle-item">Revenus affaiblis</div>
-            </div>
-        </div>
 
     </section>
 
@@ -639,37 +701,27 @@ sup a {
 
         <p>
             Richard Wilkinson et Kate Pickett ont joué un rôle important dans la diffusion d’une idée forte :
-            dans les pays riches, le niveau d’inégalité pourrait compter autant, voire parfois davantage, que
-            le niveau moyen de richesse pour expliquer certains problèmes sanitaires et sociaux. Leur thèse,
-            popularisée notamment dans <em>The Spirit Level</em>, affirme que les sociétés plus inégalitaires
-            présentent souvent de moins bons indicateurs dans des domaines comme la santé, la confiance sociale,
-            la violence, la santé mentale ou le bien-être des enfants.
-            <sup><a href="#source-6">6</a></sup>
+            dans les pays riches, le niveau d’inégalité pourrait compter autant, voire parfois davantage,
+            que le niveau moyen de richesse pour expliquer certains problèmes sanitaires et sociaux.
+            Leur thèse, popularisée notamment dans <em>The Spirit Level</em>, affirme que les sociétés plus
+            inégalitaires présentent souvent de moins bons indicateurs dans des domaines comme la santé,
+            la confiance sociale, la violence, la santé mentale ou le bien-être des enfants.
         </p>
 
         <p>
-            L’intérêt de cette approche est qu’elle déplace le regard. Il ne s’agit plus seulement de dire que
-            la pauvreté nuit à la santé, ce qui est déjà largement admis. Wilkinson et Pickett posent une question
-            plus large : les écarts trop importants entre groupes sociaux peuvent-ils fragiliser la société dans
-            son ensemble ? Leur hypothèse insiste sur la comparaison sociale, l’anxiété de statut, la hiérarchie
-            sociale, la défiance et le stress généré par des écarts de position trop importants.
-        </p>
-
-        <p>
-            Cette thèse est précieuse pour Atlas des Inégalités parce qu’elle permet de relier la santé à d’autres
-            dimensions : confiance sociale, cohésion, criminalité, santé mentale, éducation, mobilité sociale.
-            Elle donne une vision systémique des inégalités. Elle permet de comprendre que les inégalités ne sont
-            pas seulement un problème de répartition monétaire, mais aussi une question de relations sociales et
-            de qualité du lien collectif.
+            Cette approche est précieuse pour Atlas des Inégalités parce qu’elle permet de relier la santé
+            à d’autres dimensions : confiance sociale, cohésion, criminalité, santé mentale, éducation,
+            mobilité sociale. Elle donne une vision systémique des inégalités.
         </p>
 
         <div class="method-note">
             <p>
-                <strong>Thèse influente, mais débattue.</strong> Les travaux de Wilkinson et Pickett ont été influents,
-                mais ils ont aussi été critiqués. Certains chercheurs discutent le choix des pays comparés, la sélection
-                des indicateurs, la stabilité des corrélations ou la difficulté à démontrer une causalité directe.
-                Une corrélation entre inégalités et mauvaise santé ne prouve pas automatiquement que les inégalités
-                sont la cause unique du problème observé.
+                <strong>Thèse influente, mais débattue.</strong> Les travaux de Wilkinson et Pickett ont été
+                très influents, mais ils ont aussi été critiqués. Certains chercheurs discutent le choix des pays
+                comparés, la sélection des indicateurs, la stabilité des corrélations ou la difficulté à démontrer
+                une causalité directe. Une bonne démarche consiste donc à présenter ces travaux comme une contribution
+                importante au débat scientifique, et non comme une vérité définitive.<sup><a href="#source-13">13</a></sup>
+                <sup><a href="#source-14">14</a></sup>
             </p>
         </div>
 
@@ -689,16 +741,15 @@ sup a {
         <p>
             On peut aussi affirmer que ces liens passent par plusieurs mécanismes. Le revenu, le logement,
             le travail, l’éducation, l’environnement, le stress, l’accès aux soins et les relations sociales
-            interagissent. Aucun de ces facteurs ne suffit à lui seul à expliquer toutes les différences, mais
-            leur accumulation peut créer des trajectoires de santé très différentes.
+            interagissent. Aucun de ces facteurs ne suffit à lui seul à expliquer toutes les différences,
+            mais leur accumulation peut créer des trajectoires de santé très différentes.
         </p>
 
         <p>
             En revanche, il faut éviter d’affirmer que les inégalités expliquent tout. Une société peut avoir
             de mauvais indicateurs de santé pour de nombreuses raisons : système de soins insuffisant, pauvreté
             globale, crise économique, pollution, comportements de santé, vieillissement démographique, violences,
-            histoire sociale ou politiques publiques défaillantes. Les inégalités sont un facteur majeur, mais
-            elles s’inscrivent dans un ensemble plus large.
+            histoire sociale ou politiques publiques défaillantes.
         </p>
 
     </section>
@@ -710,31 +761,20 @@ sup a {
         <h3>“La santé dépend surtout des choix individuels”</h3>
 
         <p>
-            L’idée selon laquelle la santé dépend surtout des choix individuels est très répandue. Elle contient
-            une part de vérité : les comportements comptent. Fumer, boire, se nourrir, bouger, dormir, consulter
-            ou non un médecin influence la santé.
-        </p>
-
-        <p>
-            Mais cette idée devient trompeuse si elle oublie que les comportements sont socialement situés. On ne
-            choisit pas son alimentation de la même manière selon son revenu, son temps disponible, son logement,
-            son niveau d’éducation, son environnement commercial ou son niveau de fatigue. On ne pratique pas une
-            activité physique de la même manière selon que l’on habite dans un quartier agréable, sûr, bien équipé,
-            ou dans un espace où les infrastructures sont absentes.
+            Les comportements comptent. Fumer, boire, se nourrir, bouger, dormir ou consulter un médecin
+            influencent la santé. Mais cette idée devient trompeuse si elle oublie que les comportements
+            sont socialement situés. On ne choisit pas son alimentation, son activité physique ou son recours
+            aux soins dans les mêmes conditions selon son revenu, son temps disponible, son logement, son niveau
+            d’éducation ou son environnement.
         </p>
 
         <h3>“Il suffit d’avoir de bons hôpitaux”</h3>
 
         <p>
-            Un bon système hospitalier est indispensable. Il sauve des vies et constitue un pilier majeur de la
-            santé publique. Mais il ne peut pas, à lui seul, supprimer les inégalités de santé.
-        </p>
-
-        <p>
-            Si les causes sociales des maladies continuent d’agir en amont, l’hôpital intervient souvent trop tard.
-            Il soigne les conséquences, mais il ne peut pas toujours empêcher leur apparition. Une politique de santé
-            efficace doit donc garantir un accès réel aux soins, mais aussi agir sur les déterminants sociaux qui
-            produisent les écarts de santé avant même l’arrivée dans le système médical.
+            Un bon système hospitalier est indispensable. Mais il ne peut pas, à lui seul, supprimer les inégalités
+            de santé. Si les causes sociales des maladies continuent d’agir en amont, l’hôpital intervient souvent
+            trop tard. Une politique de santé efficace doit donc garantir un accès réel aux soins, mais aussi agir
+            sur les déterminants sociaux qui produisent les écarts de santé avant même l’arrivée dans le système médical.
         </p>
 
         <h3>“Les inégalités de santé concernent seulement les plus pauvres”</h3>
@@ -742,14 +782,8 @@ sup a {
         <p>
             Les personnes les plus pauvres sont souvent les plus exposées aux risques, mais les inégalités de santé
             ne s’arrêtent pas à elles. La notion de gradient social montre que les différences de santé peuvent
-            traverser l’ensemble de la société.
-        </p>
-
-        <p>
-            Cela signifie que les écarts ne se limitent pas à une frontière nette entre pauvres et riches. Ils peuvent
-            apparaître progressivement selon le niveau de revenu, le diplôme, la profession, le quartier ou le degré
-            de sécurité matérielle. Chaque position sociale peut être associée à des ressources, des contraintes et
-            des risques différents.
+            traverser l’ensemble de la société, selon le niveau de revenu, le diplôme, la profession, le quartier
+            ou le degré de sécurité matérielle.
         </p>
 
     </section>
@@ -762,57 +796,22 @@ sup a {
             <p>
                 Les inégalités sociales influencent la santé parce qu’elles modifient les conditions concrètes
                 dans lesquelles les personnes vivent. Elles agissent sur le logement, l’alimentation, le travail,
-                l’environnement, l’accès aux soins, le stress, la prévention et les relations sociales. La santé
-                n’est donc pas seulement une affaire médicale ou individuelle. Elle est aussi le résultat d’une
-                organisation sociale.
+                l’environnement, l’accès aux soins, le stress, la prévention et les relations sociales.
             </p>
 
             <p>
                 Les données ne disent pas que la position sociale détermine entièrement la santé de chaque individu.
                 Elles montrent qu’à l’échelle des populations, les groupes sociaux ne sont pas exposés aux mêmes risques
-                et ne disposent pas des mêmes protections. C’est pourquoi les inégalités de santé doivent être pensées
-                comme un enjeu de santé publique, mais aussi comme un enjeu social, économique et démocratique.
+                et ne disposent pas des mêmes protections.
             </p>
 
             <p>
-                Réduire les inégalités sociales peut donc être une manière d’améliorer la santé collective. Cela ne
-                signifie pas qu’il faut abandonner les soins, la prévention individuelle ou la responsabilité personnelle.
-                Cela signifie que ces dimensions seront plus efficaces si elles s’accompagnent d’une action sur les
-                conditions de vie.
+                Réduire les inégalités sociales peut donc être une manière d’améliorer la santé collective.
+                Cela ne signifie pas qu’il faut abandonner les soins, la prévention individuelle ou la responsabilité
+                personnelle. Cela signifie que ces dimensions seront plus efficaces si elles s’accompagnent d’une action
+                sur les conditions de vie.
             </p>
         </div>
-
-    </section>
-
-    <section id="debat">
-
-        <h2>Questions pour ouvrir le débat</h2>
-
-        <p>
-            Une politique de santé peut-elle être efficace si elle ne s’intéresse pas au logement,
-            au travail, aux revenus et à l’éducation ?
-        </p>
-
-        <p>
-            Les comportements individuels sont-ils vraiment individuels lorsqu’ils dépendent fortement
-            des conditions de vie ?
-        </p>
-
-        <p>
-            Faut-il agir d’abord sur les soins, sur la prévention ou sur les déterminants sociaux de la santé ?
-        </p>
-
-        <p>
-            Une société plus égalitaire est-elle nécessairement une société en meilleure santé ?
-        </p>
-
-        <p>
-            Comment parler de prévention sans culpabiliser les personnes qui vivent dans des conditions difficiles ?
-        </p>
-
-        <p>
-            Les inégalités de santé sont-elles d’abord une question médicale ou une question sociale ?
-        </p>
 
     </section>
 
@@ -824,51 +823,90 @@ sup a {
 
     <ol>
         <li id="source-1">
-            Organisation mondiale de la santé, “Social determinants of health”,
-            fiche de synthèse sur les déterminants sociaux de la santé.
-            <a href="https://www.who.int/fr/news-room/fact-sheets/detail/social-determinants-of-health" target="_blank">
-                Consulter la source
-            </a>.
+            Organisation mondiale de la santé, “Déterminants sociaux de la santé”.
+            <a href="https://www.who.int/fr/news-room/fact-sheets/detail/social-determinants-of-health" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-2">
-            INSEE, données sur l’espérance de vie selon la catégorie socioprofessionnelle,
-            conditions de mortalité 2020-2022.
-            <a href="https://www.insee.fr/fr/statistiques/8220688" target="_blank">
-                Consulter la source
-            </a>.
+            INSEE, “Espérance de vie à 35 ans par catégorie socioprofessionnelle et diplôme”,
+            données de 1976-1984 à 2020-2022.
+            <a href="https://www.insee.fr/fr/statistiques/2383438" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-3">
-            OCDE, <em>Health at a Glance 2023</em>, section sur les besoins médicaux non satisfaits
-            selon le revenu.
-            <a href="https://www.oecd.org/en/publications/health-at-a-glance-2023_7a7afb35-en/full-report/unmet-needs-for-healthcare_86fdd586.html" target="_blank">
-                Consulter la source
-            </a>.
+            OCDE, <em>Health at a Glance 2023</em>, section “Unmet needs for healthcare”.
+            <a href="https://www.oecd.org/en/publications/health-at-a-glance-2023_7a7afb35-en/full-report/unmet-needs-for-healthcare_86fdd586.html" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-4">
-            Marmot et al., travaux associés aux études Whitehall sur le gradient social de santé
-            parmi les fonctionnaires britanniques.
-            <a href="https://pubmed.ncbi.nlm.nih.gov/744814/" target="_blank">
-                Consulter la source
-            </a>.
+            Marmot M. G. et al., “Employment grade and coronary heart disease in British civil servants”,
+            étude Whitehall, 1978.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/744814/" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-5">
-            Commission de l’OMS sur les déterminants sociaux de la santé,
-            <em>Closing the gap in a generation</em>.
-            <a href="https://www.who.int/publications/i/item/WHO-IER-CSDH-08.1" target="_blank">
-                Consulter la source
-            </a>.
+            Marmot M. G. et al., “Health inequalities among British civil servants: the Whitehall II study”,
+            <em>The Lancet</em>, 1991.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/1674771/" target="_blank">Consulter la source</a>.
         </li>
 
         <li id="source-6">
-            Pickett & Wilkinson, revue scientifique sur les liens entre inégalités de revenus
-            et santé.
-            <a href="https://pubmed.ncbi.nlm.nih.gov/25577953/" target="_blank">
-                Consulter la source
-            </a>.
+            Marmot M. G. et al., “Contribution of job control and other risk factors to social variations
+            in coronary heart disease incidence”, Whitehall II, 1997.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/9242799/" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-7">
+            Commission de l’OMS sur les déterminants sociaux de la santé,
+            <em>Closing the gap in a generation</em>, 2008.
+            <a href="https://www.who.int/publications/i/item/WHO-IER-CSDH-08.1" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-8">
+            Santé publique France, “Inégalités sociales et territoriales de santé : les enjeux de santé”.
+            <a href="https://www.santepubliquefrance.fr/inegalites-sociales-et-territoriales-de-sante/les-enjeux-de-sante" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-9">
+            Santé publique France, “Inégalités de santé : le poids des déterminants sociaux”,
+            Baromètre de Santé publique France.
+            <a href="https://www.santepubliquefrance.fr/docs/rapportsynthese/inegalites-de-sante-le-poids-des-determinants-sociaux-barometre-de-sante-publique-france-resultats" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-10">
+            DREES, “Le renoncement aux soins pour raisons financières : une étude socio-anthropologique”,
+            rapport final.
+            <a href="https://drees.solidarites-sante.gouv.fr/sites/default/files/2020-10/dtee120.pdf" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-11">
+            DREES, “Renoncement aux soins : la faible densité médicale est un facteur aggravant pour les personnes pauvres”,
+            Études et Résultats.
+            <a href="https://drees.solidarites-sante.gouv.fr/sites/default/files/2021-07/ER1200.pdf" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-12">
+            DARES, “Disparités d’exposition aux facteurs de pénibilité en milieu professionnel
+            et inégalités sociales de santé”.
+            <a href="https://dares.travail-emploi.gouv.fr/publication/disparites-dexposition-aux-facteurs-de-penibilite-en-milieu-professionnel-et-inegalites" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-13">
+            Pickett K. E. et Wilkinson R. G., “Income inequality and health: a causal review”,
+            <em>Social Science & Medicine</em>, 2015.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/25577953/" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-14">
+            Rowlingson K., “Does income inequality cause health and social problems?”,
+            Joseph Rowntree Foundation, 2011.
+            <a href="https://www.jrf.org.uk/income-savings-and-debt/does-income-inequality-cause-health-and-social-problems" target="_blank">Consulter la source</a>.
+        </li>
+
+        <li id="source-15">
+            Haut Conseil de la santé publique, dossier sur les inégalités sociales de santé
+            et leurs évolutions.
+            <a href="https://www.hcsp.fr/Explore.cgi/Telecharger?NomFichier=ad1130956.pdf" target="_blank">Consulter la source</a>.
         </li>
     </ol>
 
@@ -880,6 +918,153 @@ sup a {
         Comprendre les mécanismes. Éclairer le débat.
     </p>
 </footer>
+
+<script>
+const chartData = {
+    csp: {
+        title: "Espérance de vie à 35 ans selon la catégorie sociale",
+        caption: "Lecture : en 2020-2022, à 35 ans, les hommes cadres peuvent espérer vivre 48,9 années supplémentaires, contre 43,6 années pour les hommes ouvriers. Source : INSEE, échantillon démographique permanent.",
+        hommes: [
+            { label: "Cadres", value: 48.9 },
+            { label: "Professions intermédiaires", value: 47.4 },
+            { label: "Employés", value: 45.1 },
+            { label: "Ouvriers", value: 43.6 },
+            { label: "Inactifs non retraités", value: 34.0 }
+        ],
+        femmes: [
+            { label: "Cadres", value: 53.0 },
+            { label: "Professions intermédiaires", value: 52.3 },
+            { label: "Employées", value: 51.2 },
+            { label: "Ouvrières", value: 49.6 },
+            { label: "Inactives non retraitées", value: 45.8 }
+        ]
+    },
+    diplome: {
+        title: "Espérance de vie à 35 ans selon le diplôme",
+        caption: "Lecture : en 2020-2022, à 35 ans, les hommes ayant un diplôme supérieur au baccalauréat peuvent espérer vivre 48,5 années supplémentaires, contre 40,5 années pour les hommes sans diplôme. Source : INSEE, échantillon démographique permanent.",
+        hommes: [
+            { label: "Supérieur au bac", value: 48.5 },
+            { label: "Baccalauréat", value: 46.5 },
+            { label: "CAP, BEP", value: 44.9 },
+            { label: "Brevet, CEP", value: 43.6 },
+            { label: "Sans diplôme", value: 40.5 }
+        ],
+        femmes: [
+            { label: "Supérieur au bac", value: 52.6 },
+            { label: "Baccalauréat", value: 51.7 },
+            { label: "CAP, BEP", value: 51.1 },
+            { label: "Brevet, CEP", value: 50.5 },
+            { label: "Sans diplôme", value: 47.2 }
+        ]
+    }
+};
+
+let currentDataset = "csp";
+let currentSex = "hommes";
+
+function renderChart() {
+    const chart = document.getElementById("bar-chart");
+    const title = document.getElementById("chart-title");
+    const caption = document.getElementById("chart-caption");
+
+    const rows = chartData[currentDataset][currentSex];
+    const max = Math.max(...rows.map(row => row.value));
+
+    title.textContent = chartData[currentDataset].title + " — " + (currentSex === "hommes" ? "Hommes" : "Femmes");
+    caption.textContent = chartData[currentDataset].caption;
+
+    chart.innerHTML = rows.map(row => {
+        const width = (row.value / max) * 100;
+        return `
+            <div class="bar-row">
+                <div class="bar-label">${row.label}</div>
+                <div class="bar-track">
+                    <div class="bar-fill" style="width:${width}%"></div>
+                </div>
+                <div class="bar-value">${row.value.toFixed(1)} ans</div>
+            </div>
+        `;
+    }).join("");
+}
+
+document.querySelectorAll(".dataset-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".dataset-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        currentDataset = button.dataset.dataset;
+        renderChart();
+    });
+});
+
+document.querySelectorAll(".sex-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".sex-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        currentSex = button.dataset.sex;
+        renderChart();
+    });
+});
+
+const factorData = {
+    revenus: {
+        title: "Revenus",
+        text: "Les revenus influencent la qualité du logement, l’alimentation, la possibilité de se chauffer, de se reposer, de consulter, de se déplacer ou d’acheter certains biens nécessaires à la santé. Ils ne déterminent pas tout, mais ils modifient fortement les marges de choix dans la vie quotidienne.",
+        path: ["Revenus", "Conditions de vie", "Prévention", "Santé"]
+    },
+    logement: {
+        title: "Logement",
+        text: "Un logement humide, mal isolé, bruyant ou surpeuplé peut peser sur le sommeil, les maladies respiratoires, le stress et la récupération. Le logement est donc un déterminant de santé, même s’il n’est pas toujours pensé comme tel.",
+        path: ["Logement", "Sommeil", "Stress", "Santé respiratoire"]
+    },
+    travail: {
+        title: "Travail",
+        text: "Le travail peut protéger par le revenu, la reconnaissance et les liens sociaux. Mais il peut aussi exposer à la pénibilité physique, au manque d’autonomie, aux horaires décalés, à l’intensité ou à l’usure professionnelle.",
+        path: ["Travail", "Pénibilité", "Fatigue", "Santé"]
+    },
+    soins: {
+        title: "Accès aux soins",
+        text: "L’accès aux soins ne dépend pas seulement de l’existence d’un système médical. Il dépend aussi des coûts, des délais, du territoire, de la couverture complémentaire, de la confiance envers les institutions et de la capacité à s’orienter dans le système.",
+        path: ["Besoin de soin", "Coût / délai", "Renoncement possible", "Santé"]
+    },
+    stress: {
+        title: "Stress chronique",
+        text: "Lorsque l’insécurité matérielle, la pression au travail, les discriminations ou l’impossibilité de se projeter deviennent durables, le stress peut affecter le sommeil, la santé mentale, les comportements de compensation et certaines maladies chroniques.",
+        path: ["Insécurité", "Stress durable", "Sommeil / tension", "Santé"]
+    },
+    education: {
+        title: "Éducation",
+        text: "Le niveau d’éducation influence l’accès à l’information, la capacité à comprendre les messages de prévention, à naviguer dans les démarches administratives et médicales, et à transformer une information de santé en action concrète.",
+        path: ["Éducation", "Information", "Prévention", "Recours aux soins"]
+    },
+    environnement: {
+        title: "Environnement",
+        text: "La pollution, le bruit, l’accès aux espaces verts, la qualité des transports et l’exposition aux nuisances ne sont pas répartis de façon homogène. L’environnement quotidien peut donc renforcer ou réduire les risques de santé.",
+        path: ["Territoire", "Pollution / bruit", "Exposition", "Santé"]
+    },
+    relations: {
+        title: "Relations sociales",
+        text: "Les proches, les voisins, les collègues et les réseaux d’entraide peuvent aider à obtenir une information, à surmonter une difficulté ou à demander de l’aide. À l’inverse, l’isolement peut renforcer la vulnérabilité.",
+        path: ["Relations", "Soutien", "Confiance", "Protection"]
+    }
+};
+
+function renderFactor(factor) {
+    const data = factorData[factor];
+    document.getElementById("factor-title").textContent = data.title;
+    document.getElementById("factor-text").textContent = data.text;
+    document.getElementById("factor-path").innerHTML = data.path.map(item => `<span>${item}</span>`).join("");
+}
+
+document.querySelectorAll(".factor-node").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".factor-node").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        renderFactor(button.dataset.factor);
+    });
+});
+
+renderChart();
+</script>
 
 </body>
 </html>
