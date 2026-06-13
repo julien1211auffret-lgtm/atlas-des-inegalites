@@ -268,5 +268,16 @@ footer p {
     ul {
         padding: 24px 30px;
     }
+    
+}
+.hero .btn {
+    background: #ffffff;
+    color: #1e3a8a !important;
+    border: 2px solid #ffffff;
+}
+
+.hero .btn:hover {
+    background: #eff6ff;
+    color: #1e3a8a !important;
 }
 ```
