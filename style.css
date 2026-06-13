@@ -103,6 +103,18 @@ input[type="range"] {
     margin: 25px 0;
 }
 
+.card-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1e3a8a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
 .simulation-box {
     background: white;
     border-left: 6px solid #1e3a8a;
