@@ -280,4 +280,30 @@ footer p {
     background: #eff6ff;
     color: #1e3a8a !important;
 }
+
+/* Correction globale des boutons */
+.btn,
+.btn:visited,
+.hero .btn,
+.hero .btn:visited {
+    display: inline-block !important;
+    background-color: #ffffff !important;
+    color: #1e3a8a !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+    padding: 15px 28px !important;
+    border-radius: 999px !important;
+    border: 2px solid #ffffff !important;
+    min-width: 230px !important;
+    text-align: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.btn:hover,
+.hero .btn:hover {
+    background-color: #eff6ff !important;
+    color: #1e3a8a !important;
+}
 ```
